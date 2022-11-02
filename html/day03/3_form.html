@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>폼</h2>
+
+    <!-- method 속성은 생략시 get 방식 -->
+    <form action="join_db.jsp">
+      <p>
+        <input type="text" value="apple" name="userid" malength="6" size="30"/>
+      </p>
+      <p>
+        <input type="password" name="user" placeholder="비밀번호를 입력하세요" required/>
+      </p>
+      <p>
+        <fieldset>
+        <legend>성별</legend>
+        <label>
+        남자 <input type="radio" name="gender" value="M" checked/>
+        </label>
+        <label for="w">여자</label>
+        <input type="radio" name="gender" value="W" id="w"/>
+        
+        </fieldset>
+      </p>
+      <p>
+        A <input type="checkbox" name="blood" id="" value="A" checked>
+        B <input type="checkbox" name="blood" id="" value="B">
+        O <input type="checkbox" name="blood" id="" value="O">
+        AB <input type="checkbox" name="blood" id="" value="AB">
+      </p>
+      <p>
+        <input type="file" disabled>
+      </p>
+      <p>
+        <input type="email" value="apple@juice.com" readonly>
+      </p>
+      <p>
+        <input type="url">
+      </p>
+      <p>
+        <input type="tel">
+      </p>
+      <p>
+        <input type="date">
+      </p>
+      <p>
+        <input type="number" step="1" max="5" min="0">
+      </p>
+      <p>
+        <input type="color">
+      </p>
+      <p>
+        <input type="search">
+      </p>
+      <p>
+        <input type="range" min="0" max="5">
+      </p>
+      <p>
+        <input type="submit" value="제출">
+        <input type="reset" value="리셋">
+        <input type="button" value="버튼">
+      </p>
+    </form>
+  </body>
+</html>
