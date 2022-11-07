@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 1, 4, 8 */
+      [title~="css"] {
+        color: red;
+      }
+      /* 전부다 */
+      [title*="css"] {
+        font-size: 25px;
+      }
+      /* 1, 2, 3, 4, 5 */
+      [title$="css"] {
+        background-color: deepskyblue;
+      }
+      /* 1, 6 */
+      [title|="css"] {
+        font-weight: bold;
+      }
+      /* 1, 6, 7, 8, 9 */
+      [title^="css"] {
+        text-align: center;
+      }
+
+      /* img 태그중 .jpg 파일을 띄워주고 있는 태그들만 선택 */
+      img[src$=".jpg"] {
+      }
+    </style>
+  </head>
+  <body>
+    <h2>속성선택자 - 2</h2>
+    <p title="css">1 - 독립적인 단어</p>
+    <p title="funny-css">2 - 하이픈이 들어간 합성어(접미사)</p>
+    <p title="funny_css">3 - 언더바가 들어간 합성어(접미사)</p>
+    <p title="funny css">4 - 공백으로 연결된 합성어(접미사)</p>
+    <p title="funnycss">5 - 공백이 없는 합성어(접미사)</p>
+    <p title="css-funny">6 - 하이픈이 들어간 합성어(접두사)</p>
+    <p title="css_funny">7 - 언더바가 들어간 합성어(접두사)</p>
+    <p title="css funny">8 - 공백으로 연결된 합성어(접두사)</p>
+    <p title="cssfunny">9 - 공백이 없는 합성어(접두사)</p>
+  </body>
+</html>

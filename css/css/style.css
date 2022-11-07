@@ -1,0 +1,19 @@
+h2 {
+  font-size: 100px;
+  color: blue;
+}
+
+p {
+  font-size: 20px;
+  background-color: orange;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li{
+    font-weight: bold;
+    display: inline;
+    margin-right: 50px;
+}

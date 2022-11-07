@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .list > li:first-child {
+        color: blue;
+      }
+      .list > li:last-child {
+        color: red;
+      }
+      .list > li:nth-child(4) {
+        color: green;
+      }
+      .list > li:nth-child(odd) {
+        background-color: gray;
+      }
+      .list > li:nth-child(even) {
+        background-color: gold;
+      }
+
+      .list > li:nth-child(n + 3) {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>가상클래스 선택자</h2>
+    <ul class="list">
+      <li>김사과</li>
+      <li>반하나</li>
+      <li>이체리</li>
+      <li>차두리</li>
+      <li>유자석</li>
+      <li>피조아</li>
+      <li>최포도</li>
+    </ul>
+  </body>
+</html>
