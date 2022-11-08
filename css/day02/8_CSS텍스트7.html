@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700;900&family=Poor+Story&family=Roboto:wght@400;500;700;900&display=swap");
+      @font-face {
+        font-family: "PyeongChangPeace-Bold";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2")
+          format("woff2");
+        font-weight: 700;
+        font-style: normal;
+      }
+      h2 {
+        font-family: "Poor Story", cursive;
+      }
+      /* 글자의 기본 크기는 16px */
+      p {
+        font-size: 24px;
+        font-family: "PyeongChangPeace-Bold";
+      }
+      .normal {
+        font-size: 150%;
+        /* font-weight:normal */
+        font-weight: 400;
+      }
+      .em {
+        font-size: 2em; /* 부모요소의 2배가 됨. p 태그 24px 이니까 48px */
+      }
+      .rem {
+        font-size: 2rem; /* 부모요소의 영향안받음 html 요소의 영향을 받음. html 16px 이니까 32px 됨.*/
+      }
+      .bold {
+        /* font-weight: bold; */
+        font-weight: 700;
+      }
+      .extrabold {
+        font-weight: 900;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>CSS 텍스트 - 7</h2>
+    <p class="normal">
+      <span class="em">Lorem, ipsum</span> dolor sit amet consectetur
+      adipisicing elit. Corporis expedita asperiores, id modi sed cum neque hic
+      quod iste reprehenderit exercitationem earum aspernatur a quae veniam
+      atque quam <span class="rem">laboriosam reiciendis?</span>
+    </p>
+    <p class="bold">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint, soluta
+      molestias. Voluptatum veniam accusamus ad quis cupiditate voluptas
+      praesentium recusandae ut libero, odit possimus aperiam deleniti.
+      Provident in perferendis ea!
+    </p>
+    <p class="extrabold">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis cumque
+      maiores saepe quidem consequatur reprehenderit cupiditate necessitatibus
+      ab neque assumenda consectetur in, earum minus? Consequatur est vero
+      rerum? Obcaecati, impedit.
+    </p>
+  </body>
+</html>
