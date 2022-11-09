@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>폼</title>
+    <link rel="icon" href="./gg.png">
+    <style>
+       @font-face {
+        font-family: "PyeongChangPeace-Bold";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2")
+          format("woff2");
+        font-weight: 700;
+        font-style: normal;
+      }
+      form{
+        background-image: url(./aa.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      th{
+        font-family: "PyeongChangPeace-Bold";
+      }
+        table{
+            margin : 0 auto;
+        }
+        fieldset{
+            background-color: skyblue;
+            width: 550px;
+            height: 660px;
+            margin : 0 auto;
+        }
+      input[type="text"] {
+        border-radius: 15px;
+      }
+      input[type="text"]:hover {
+        background-color: lightgreen;
+      }
+      input[type="text"]:focus {
+        border: 2px dashed red;
+        background-color: aliceblue;
+        outline: none;
+      }
+      input[type="password"]:focus {
+        outline: none;
+        border-bottom-color: blue;
+      }
+      select {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        margin: 5px 0;
+        border: 2px solid yellowgreen;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+      textarea {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100px;
+        resize: none;
+        padding: 10px;
+        font-size: 20px;
+        border: 3px solid teal;
+        border-radius: 10px;
+      }
+
+      input[type="button"],
+      input[type="submit"],
+      input[type="reset"] {
+        width: 100px;
+        background-color: rgb(76, 80, 194);
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+      }
+      input[type="reset"]:hover,
+      input[type="button"]:hover,
+      input[type="submit"]:hover {
+        background-color: aqua;
+      }
+      input::placeholder {
+        color: blueviolet;
+      }
+      #c input{
+        display: inline-block;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 회원가입 폼 제작 -->
+    <!-- 아이디, 중복검사 버튼, 비밀번호, 비밀번호 확인, 이름, 성별, 우편번호, 주소, 상세주소, 참고항목, 취미(6개), 가입완료 버튼 -->
+
+<fieldset>
+    <legend><b style="color:slategrey">회원가입 폼 작성</b></legend>    
+    <form>
+      <table>
+        <tr>
+          <th>아이디</th>
+          <td><input type="text" required placeholder="아이디를 입력하세요"/> &nbsp;<input type="button" value="중복검사"/></td>
+        </tr>
+        <tr>
+          <th>비밀번호</th>
+          <td><input type="password" required placeholder="비밀번호를 입력하세요"/></td>
+        </tr>
+        <tr>
+          <th>비밀번호 확인</th>
+          <td><input type="re_password" required placeholder="비밀번호를 입력하세요"/></td>
+        </tr>
+        <tr>
+          <th>이름</th>
+          <td><input type="name" required placeholder="이름을 입력하세요"/></td>
+        </tr>
+        <tr>
+          <th>성별</th>
+          <td>
+            <label>남<input type="radio" name="gender" checked/></label>
+            <label>여<input type="radio" name="gender"/></label>
+          </td>
+        </tr>
+        <tr>
+          <th>우편번호</th>
+          <td>
+            <input type="text" required placeholder="000-000" /> &nbsp;<input type="button" value="우편번호찾기"/>
+          </td>
+        </tr>
+        <tr>
+          <th>주소</th>
+          <td>
+            <input type="text" />
+          </td>
+        </tr>
+        <tr>
+          <th>상세주소</th>
+          <td>
+            <input type="text" />
+          </td>
+        </tr>
+        <tr>
+          <th>참고항목</th>
+          <td>
+            <textarea></textarea>
+          </td>
+        </tr>
+        <tr>
+          <th>취미</td>
+          <td>
+            <select>
+              <option>java공부하기</option>
+              <option>mysql공부하기</option>
+              <option>css공부하기</option>
+              <option>js공부하기</option>
+              <option>jsp공부하기</option>
+              <option >html공부하기</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+            <th>문어<br>보러가기</th>
+            <td><iframe width="250" height="170" src="https://www.youtube.com/embed/iwPS2a1Lh-k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+        </tr>
+        <tr>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td id="c" cols="3" style="text-align: center;"><input type="submit" value="제출하기"/><input type="reset" value="초기화"/><input type="button" value="가입하기"/></td>
+        </tr>
+      </table>
+    </form>
+</fieldset>    
+  </body>
+</html>
