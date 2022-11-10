@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+#container {
+  width: 1000px;
+  margin: 0 auto;
+}
+div,
+header,
+footer {
+  border: 1px solid gray;
+  padding: 20px;
+}
+header {
+  margin-bottom: 20px;
+  border-color: red;
+}
+#contents {
+  border-color: blue;
+  height: 500px;
+}
+footer {
+  margin-top: 20px;
+  border-color: green;
+}
+#contents > .inner_box {
+  width: 695px;
+  margin-right: 20px;
+  float: left;
+  height: 455px;
+}
+#side_bar {
+  width: 195px;
+  float: right;
+  height: 455px;
+}
