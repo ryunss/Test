@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @media screen and (min-width: 320px) {
+        #container {
+          background-color: rgb(171, 228, 251);
+        }
+        header {
+          width: 100%;
+          background-color: gray;
+          height: 50px;
+        }
+        footer {
+          width: 100%;
+          background-color: gray;
+          height: 50px;
+          text-align: center;
+          line-height: 50px;
+          color: white;
+        }
+        li {
+          list-style: none;
+          line-height: 50px;
+          text-align: center;
+          width: 80px;
+          color: white;
+        }
+        ul {
+          width: 400px;
+          margin: 0 auto;
+          height: 50px;
+          display: flex;
+          justify-content: space-between;
+        }
+        #contents {
+          width: 340px;
+          margin: 0 auto;
+        }
+        #intro {
+          padding: 20px;
+        }
+        #intro img {
+          width: 300px;
+        }
+        #desc {
+          background-color: antiquewhite;
+          padding: 20px;
+        }
+      }
+      @media screen and (min-width: 768px) {
+        header {
+          width: 100%;
+          background-color: gray;
+          height: 50px;
+        }
+        footer {
+          width: 100%;
+          background-color: gray;
+          height: 50px;
+          text-align: center;
+          line-height: 50px;
+          color: white;
+        }
+        li {
+          list-style: none;
+          line-height: 50px;
+          text-align: center;
+          width: 80px;
+          color: white;
+        }
+        ul {
+          width: 400px;
+          margin: 0 50px;
+          height: 50px;
+          display: flex;
+          justify-content: space-between;
+        }
+        #contents {
+          width: 600px;
+          margin-left: 80px;
+        }
+        #intro {
+          margin-right: 50px;
+          padding: 20px;
+        }
+        #intro img {
+          width: 100px;
+        }
+        #desc {
+          background-color: antiquewhite;
+          width: 400px;
+          padding: 20px;
+        }
+      }
+      @media screen and (min-width: 1024px) {
+        header {
+          width: 100%;
+          background-color: gray;
+          height: 50px;
+        }
+        footer {
+          width: 100%;
+          background-color: pink;
+          height: 50px;
+          text-align: center;
+          line-height: 50px;
+          color: white;
+        }
+        li {
+          list-style: none;
+          line-height: 50px;
+          text-align: center;
+          width: 80px;
+          color: white;
+        }
+        ul {
+          width: 400px;
+          margin: 0 250px;
+          height: 50px;
+          display: flex;
+          justify-content: space-between;
+        }
+        #contents {
+          width: 1000px;
+          margin: 0 auto;
+          display: flex;
+        }
+        #intro {
+          margin-right: 50px;
+          padding: 20px;
+        }
+        #intro img {
+          width: 100px;
+        }
+        #desc {
+          background-color: antiquewhite;
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <nav>
+          <ul>
+            <li>인스타그램</li>
+            <li>유튜브</li>
+            <li>페이스북</li>
+            <li>트위터</li>
+          </ul>
+        </nav>
+      </header>
+      <div id="contents">
+        <!-- 
+            <section>
+            h태그를 이용한 제목
+            <article>내용</article>
+            </section> 
+        -->
+        <section id="intro">
+          <img src="./images/ins.png" alt="인스타그램" />
+          <img src="./images/face.png" alt="페이스북" />
+          <img src="./images/u.png" alt="유튜브" />
+          <img src="./images/tw.png" alt="트위터" />
+        </section>
+        <aside id="desc" class="text">
+          무슨 말이 더 필요해<br />무시 마 내가 걸어온 커리어<br />I go to ride
+          till I die die<br />더 높이 가줄게<br />내가 바랐던 세계 젤 위에<br />떨어져도
+          돼<br />I’m antifragile antifragile<br />난 지금 on my way 갖다버려
+          줘<br />너의 fairy tale<br />Now you know my name<br />I’m antifragile
+          antifragile<br />Anti ti ti ti fragile fragile<br />Anti ti ti ti
+          fragile<br />Anti ti ti ti fragile fragile<br />Antifragile
+          antifragile
+        </aside>
+      </div>
+      <footer>
+        <p>Copryright&copy;DS Company 221111</p>
+      </footer>
+    </div>
+  </body>
+</html>
