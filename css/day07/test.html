@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="ko" class="">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <link
+      href="https://s.zigbang.com/zbee/spoqa/css/SpoqaHanSans-kr.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="/Content/src/lessor.less?v=2211150414" />
+    <link
+      rel="stylesheet"
+      href="/Content/dist/styles_old.bundle.css?v=2211150414"
+    />
+    <link rel="stylesheet" href="/Content/dist/index.bundle.css?v=2211150414" />
+    <link rel="shortcut icon" href="//s.zigbang.com/legacy/icon_zigbang.png" />
+    <title>직방 중개사 사이트</title>
+
+    <link
+      href="//s.zigbang.com/js/jquery-calendar/1.11.2/jquery-ui.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="//s.zigbang.com/legacy/icon_zigbang.png"
+    />
+    <meta
+      name="msapplication-TileImage"
+      content="//s.zigbang.com/legacy/icon_zigbang.png"
+    />
+    <meta name="msapplication-TileColor" content="#ffd46c" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-42257732-4"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-42257732-4");
+    </script>
+
+    <!--[if lt IE 9]>
+	<script type="text/javascript" src="//s.zigbang.com/js/html5shiv/3.7.2/html5shiv-printshiv.min.js"></script
+	<![endif]-->
+    <script
+      type="text/javascript"
+      src="//s.zigbang.com/js/cdnjs-fastclick/1.0.3/fastclick.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//static.criteo.net/js/ld/ld.js"
+      async="true"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//s.zigbang.com/js/zigbang-utils/bundle.js"
+    ></script>
+    <script type="text/javascript">
+      // init externals
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-WSXDQ2");
+      // versioning
+      var tpl_version = "2211150414";
+      var api_host = "https://api.zigbang.com";
+      var apis_host = "https://apis.zigbang.com";
+      var apis2_host = "https://apis.zigbang.com";
+      var cParams = {
+        hashed_user_email: "",
+        url_logout: "/account/logout",
+        user_no: "",
+        trevi_address: "https://apis.zigbang.com/users/",
+        request_agree: "",
+        request_was_slept: "",
+      };
+      var stage = "prod";
+      var AWS_PROJECT_REGION = "us-east-1";
+      var AWS_COGNITO_IDENTITY_POOL_ID =
+        "us-east-1:59a2e2ae-ab90-48c8-a608-808db3bda3c5";
+      var AWS_COGNITO_REGION = "us-east-1";
+      var AWS_MOBILE_ANALYTICS_APP_ID = "e811d07d3205447c8add65c4f3413ce6";
+      var AWS_MOBILE_ANALYTICS_APP_REGION = "us-east-1";
+      var ZID_COOKIE_DOMAIN = ".zigbang.com";
+    </script>
+
+    <script type="text/javascript">
+      function convertToM2(pyung) {
+        return zbUtils.Units.formatNumber(zbUtils.Units.m2(pyung), "m2");
+      }
+
+      function convertToPyung(m2) {
+        return zbUtils.Units.formatNumber(zbUtils.Units.p(m2), "p_b2b");
+      }
+    </script>
+  </head>
+  <body class="bg_gray mobile_white">
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-WSXDQ2"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <div class="wrap">
+      <header class="header" id="header">
+        <div class="in">
+          <h1>
+            <a href="/"
+              ><img
+                src="//s.zigbang.com/ceo/ceo_logo4.png"
+                alt="직방 중개사 사이트"
+                height="27"
+            /></a>
+          </h1>
+          <div class="gnb">
+            <ul id="gnb-container">
+              <li class="home active"><a href="/">홈</a></li>
+
+              <li class="has_d2">
+                <a href="/penalty#/stats">허위광고OUT</a>
+                <div class="depth2_bx">
+                  <div class="in_bx">
+                    <a href="/penalty#/stats" class="" onclick="">
+                      <span>중개사무소 조치 현황</span>
+                    </a>
+                    <a href="/penalty#/out" class="" onclick="">
+                      <span>안심광고프로젝트</span>
+                    </a>
+                    <a href="/products/policy" class="" onclick="">
+                      <span>안심운영정책</span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="has_d2">
+                <a href="/notice">이용안내</a>
+                <div class="depth2_bx">
+                  <div class="in_bx">
+                    <a href="/notice" class="" onclick="">
+                      <span>공지사항</span>
+                    </a>
+                    <a href="/notice/news" class="" onclick="">
+                      <span>뉴스</span>
+                    </a>
+                    <a href="/products/guide" class="" onclick="">
+                      <span>이용가이드</span>
+                    </a>
+                    <a href="/support/report" class="" onclick="">
+                      <span>신고</span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="has_d2"></li>
+
+              <li class="has_d2 all_menu">
+                <a href="javascript:;" id="btn_show_navi"
+                  ><span class="ham"></span
+                  ><span class="m_hide">전체</span>메뉴</a
+                >
+                <div class="all_menu_bx">
+                  <div class="in">
+                    <div class="in2">
+                      <div
+                        id="aside_user_info_area"
+                        class="user_info_area"
+                      ></div>
+                      <ul class="nav">
+                        <li class="has_d2">
+                          <a href="/penalty#/stats">허위광고OUT</a>
+                          <div class="depth2_bx">
+                            <div class="in_bx">
+                              <a href="/penalty#/stats" class="" onclick="">
+                                <span>중개사무소 조치 현황</span>
+                              </a>
+                              <a href="/penalty#/out" class="" onclick="">
+                                <span>안심광고프로젝트</span>
+                              </a>
+                              <a href="/products/policy" class="" onclick="">
+                                <span>안심운영정책</span>
+                              </a>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="has_d2">
+                          <a href="/notice">이용안내</a>
+                          <div class="depth2_bx">
+                            <div class="in_bx">
+                              <a href="/notice" class="" onclick="">
+                                <span>공지사항</span>
+                              </a>
+                              <a href="/notice/news" class="" onclick="">
+                                <span>뉴스</span>
+                              </a>
+                              <a href="/products/guide" class="" onclick="">
+                                <span>이용가이드</span>
+                              </a>
+                              <a href="/support/report" class="" onclick="">
+                                <span>신고</span>
+                              </a>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="has_d2"></li>
+                      </ul>
+                    </div>
+                    <button id="btn_close_navi" class="btn_close_navi">
+                      <span class="icon-close2"></span>
+                    </button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="top_btn">
+            <a class="i_link" href="https://zigbang.com" target="_blank"
+              >직방 홈페이지 바로가기</a
+            >
+          </div>
+        </div>
+      </header>
+      <section class="c_wrap flex">
+        <div class="container index_page_area">
+          <div class="top_btns only_mobile">
+            <a href="/account/login">로그인</a>
+            <a href="/account/register" target="_blank">중개사무소 회원가입</a>
+          </div>
+          <div class="tiles">
+            <div class="prd_banner_warp">
+              <div class="prd_banner room">
+                <div class="in">
+                  <div class="img" style="bottom: 3px">
+                    <div>
+                      <img
+                        src="//s.zigbang.com/ceo/v2/main/main_oneroom.png"
+                        alt=""
+                        width="161"
+                        height="109"
+                      />
+                    </div>
+                  </div>
+                  <div class="txt">
+                    <div class="desc">
+                      <h4>원룸 배너 상품</h4>
+                      <p class="mobile">
+                        다세대/다가구의 원룸 전· 월세 <br />
+                        광고를 할 수 있는 상품입니다.
+                      </p>
+                      <p class="desktop">
+                        다세대/다가구의<br />원룸 전· 월세 광고를<br />할 수
+                        있는 상품입니다.
+                      </p>
+                    </div>
+                    <a
+                      href="https://www.zigbang.com/agent/product/oneroom"
+                      target="_blank"
+                      class="gray"
+                      >자세히 보기</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="prd_banner room">
+                <div class="in">
+                  <div class="img" style="bottom: 3px">
+                    <div>
+                      <img
+                        src="//s.zigbang.com/ceo/v2/main/main_villa.png"
+                        alt=""
+                        width="154"
+                        height="127"
+                      />
+                    </div>
+                  </div>
+                  <div class="txt">
+                    <div class="desc">
+                      <h4>빌라·투룸+ 배너 상품</h4>
+                      <p class="mobile">
+                        투룸 이상 전·월세, 매매 <br />
+                        광고를 할 수 있는 상품입니다.
+                      </p>
+                      <p class="desktop">
+                        투룸 이상 전·월세, 매매 광고를<br />
+                        할 수 있는 상품입니다.
+                      </p>
+                    </div>
+                    <a
+                      href="https://www.zigbang.com/agent/product/villa"
+                      target="_blank"
+                      class="gray"
+                      >자세히 보기</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="prd_banner room">
+                <div class="in">
+                  <div class="img" style="bottom: -10px">
+                    <div>
+                      <img
+                        src="//s.zigbang.com/ceo/v2/main/main_officetel.png"
+                        alt=""
+                        width="154"
+                        height="159"
+                      />
+                    </div>
+                  </div>
+                  <div class="txt">
+                    <div class="desc">
+                      <h4>오피스텔 배너 상품</h4>
+                      <p class="mobile">
+                        오피스텔/도시형생활주택의 전·월세 <br />
+                        광고를 할 수 있는 상품입니다.
+                      </p>
+                      <p class="desktop">
+                        오피스텔/도시형생활주택의 <br />
+                        전·월세 광고를 할 수 <br />있는 상품입니다.
+                      </p>
+                    </div>
+                    <a
+                      href="https://www.zigbang.com/agent/product/officetel"
+                      target="_blank"
+                      class="gray"
+                      >자세히 보기</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="last_tile only_pc">
+              <div class="login_div">
+                <h4>직방 중개사 로그인</h4>
+                <form action="/account/login" method="post">
+                  <input type="hidden" name="return_url" value="" />
+                  <input
+                    class="ipt"
+                    type="text"
+                    name="username"
+                    placeholder="아이디"
+                  />
+                  <input
+                    class="ipt"
+                    type="password"
+                    name="password"
+                    placeholder="비밀번호"
+                  />
+                  <div class="form_opt">
+                    <label
+                      ><input type="checkbox" name="remember" value="true" />
+                      아이디 저장</label
+                    >
+                    <a href="/account/FindPw" class="search_account"
+                      >비밀번호 찾기</a
+                    >
+                  </div>
+                  <div class="bot_btns">
+                    <button type="submit" class="orange">로그인</button>
+                    <a href="/account/register" target="_blank">회원가입</a>
+                  </div>
+                </form>
+              </div>
+              <div class="main_banner" id="main_banner"></div>
+            </div>
+          </div>
+
+          <div class="news_container">
+            <div class="news_list_bx">
+              <h4>
+                뉴스
+                <a href="/notice/news" class=""
+                  ><span>더보기</span><i class="icon-arrow"></i
+                ></a>
+              </h4>
+              <ul class="lst">
+                <li>
+                  <a href="/notice/3105"
+                    >직방, 신한카드 카드월세납부 ‘My월세’ MOU 체결</a
+                  >
+                  <span>2020.09.11</span>
+                </li>
+                <li>
+                  <a href="/notice/2514"
+                    >직방, 우리은행과 손잡고 부동산 신사업 개발</a
+                  >
+                  <span>2018.11.06</span>
+                </li>
+                <li>
+                  <a href="/notice/2512"
+                    >직방, 허위매물 잘 잡으니 고객만족도 ↑</a
+                  >
+                  <span>2018.11.06</span>
+                </li>
+              </ul>
+            </div>
+            <div class="news_list_bx">
+              <h4>
+                공지사항<a href="/notice" class=""
+                  ><span>더보기</span><i class="icon-arrow"></i
+                ></a>
+              </h4>
+              <ul class="lst">
+                <li>
+                  <a
+                    href="https://blog.naver.com/zigbangceo/222923418015"
+                    target="_blank"
+                    >[공지] 단기 매물 서비스 시범 운영 안내</a
+                  >
+                  <span>2022.11.09</span>
+                </li>
+                <li>
+                  <a
+                    href="https://blog.naver.com/zigbangceo/222901639428"
+                    target="_blank"
+                    >[긴급공지] 직방 서비스 장애 발생에 따른 일부 서비스 복구
+                    안내(10/16, 오후17시</a
+                  >
+                  <span>2022.10.16</span>
+                </li>
+                <li>
+                  <a
+                    href="https://blog.naver.com/zigbangceo/222901030299"
+                    target="_blank"
+                    >[긴급공지] 직방 서비스 장애 발생 안내</a
+                  >
+                  <span>2022.10.15</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="fix_banner">
+          <div class="inner">
+            <button
+              type="button"
+              class="guide_download"
+              id="guide_download"
+              onclick="guideDown();"
+            >
+              <img
+                src="//s.zigbang.com/ceo/icon_guide.png"
+                alt=""
+              /><br />가이드
+            </button>
+            <a href="/support/report" class="bug_report"
+              ><span class="icon-singo"></span><br />신고</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="foot_area">
+          <div class="i_link">
+            <a class="logo"
+              ><img
+                src="//s.zigbang.com/v1/web/common/new/h_logo.png"
+                alt="직방"
+                height="26"
+            /></a>
+            <a href="//company.zigbang.com" target="_blank">회사소개</a>
+            <a
+              href="//s.zigbang.com/agree/user-agreement-last.html"
+              target="_blank"
+              >이용약관</a
+            >
+            <a
+              href="//s.zigbang.com/agree/user-privacy-last.html"
+              target="_blank"
+              ><b>개인정보 처리방침</b></a
+            >
+            <a
+              href="//s.zigbang.com/agree/location-agreement-last.html"
+              target="_blank"
+              >위치기반 서비스 이용약관</a
+            >
+            <a href="/products/policy" target="_blank">안심운영정책</a>
+          </div>
+          <ul class="i_copyright">
+            <li>
+              상호 :
+              <div class="inline_list">
+                <span>(주)직방</span><span>대표 : 안성우</span
+                ><span>사업자등록번호: 120-87-61559</span>
+              </div>
+            </li>
+            <li>
+              <div class="inline_list">
+                <span
+                  >주소 : 서울특별시 강남구 역삼로 17길 64, 4층(역삼동,
+                  제스빌딩) (우 : 06237)</span
+                ><span>팩스 : 02-568-4908</span>
+              </div>
+            </li>
+            <li>통신판매업 신고번호 : 제2021-서울강남-06358호</li>
+            <li>
+              <div class="inline_list">
+                <span>서비스 이용문의 : 1661-8734</span
+                ><span
+                  >이메일 :
+                  <a href="mailto:cs@zigbang.com">cs@zigbang.com</a></span
+                ><span
+                  >서비스제휴문의 :
+                  <a href="mailto:partnership@zigbang.com"
+                    >partnership@zigbang.com</a
+                  ></span
+                >
+              </div>
+              <span class="rights"
+                >Copyright © ZIGBANG. All Rights Reserved.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </footer>
+
+      <div class="bg_layer" id="bg_ieRowCheck" style="display: none"></div>
+      <div
+        class="modal"
+        id="ieRowCheck"
+        style="display: none; width: 600px; margin-left: -300px"
+      >
+        <h3>미지원 브라우저</h3>
+        <h4>
+          지원하지 않는 브라우저입니다.<br />원활한 사용을 위해서 현재
+          브라우저의 최신 버전이나<br />
+          크롬브라우저를 이용해주세요.<br />PC에 크롬이 설치되어 있지 않다면
+          확인 버튼을 눌러 다운로드 받아주세요.
+        </h4>
+        <div style="padding-top: 20px">
+          <button
+            type="button"
+            class="btn b_next"
+            onclick='location.href = "//www.google.com/chrome";'
+            style="*padding: 0; zoom: 1; *display: inline; _display: inline"
+          >
+            크롬 설치하기
+          </button>
+          &nbsp;
+          <button
+            type="button"
+            class="btn b_next"
+            onclick='location.href = "http://windows.microsoft.com/ko-KR/internet-explorer/download-ie";'
+            style="*padding: 0; zoom: 1; *display: inline; _display: inline"
+          >
+            IE 설치하기</button
+          >&nbsp;
+          <button
+            type="button"
+            class="btn b_next"
+            onclick='location.href = "//www.zigbang.com/";'
+            style="*padding: 0; zoom: 1; *display: inline; _display: inline"
+          >
+            이전버전 사용하기
+          </button>
+        </div>
+
+        <div style="padding-top: 20px">
+          <label style="cursor: pointer" onclick="ieCheckCookie();"
+            ><input type="checkbox" /> 오늘 하루 보지 않음</label
+          >
+        </div>
+      </div>
+      <div class="modal" id="unsupport" style="display: none">
+        <h3>미지원 브라우저 알림</h3>
+        <p>
+          [이미지 등록 미지원 브라우저]<br /><br />이 브라우저는 이미지 등록
+          기능이 지원되지 않습니다. 이미지 등록 외에는 모든 기능을 사용하실 수
+          있습니다.<br /><br />스마트폰의 앱 중 명칭이 "인터넷"으로 된 브라우저
+          또는 구글 마켓에 있는 "Chrome" 브라우저를 사용해주세요.
+        </p>
+        <div>
+          <button
+            type="button"
+            class="btn b_next"
+            onclick='location.href="//play.google.com/store/apps/details?id=com.android.chrome"'
+          >
+            Chrome 설치하기
+          </button>
+          <button
+            type="button"
+            class="btn b_next"
+            onclick='$("#unsupport").hide(); $(".bg_layer").hide();'
+          >
+            확인
+          </button>
+        </div>
+
+        <p style="margin: 10px 0 0">
+          <label style="cursor: pointer" onclick="mobileCheckCookie();"
+            ><input type="checkbox" /> 오늘 하루 보지 않음</label
+          >
+        </p>
+      </div>
+      <div class="premium_layer" id="premiumAsk">
+        <h4><em class="zbIcon icon-warning"></em></h4>
+        <p>
+          안심중개사가 되면
+          <strong>
+            이용자의 신뢰를 얻고,<br />
+            더 높은 광고효과를 보실 수 있습니다. </strong
+          ><br />
+          한번 더 고민해보시길 바랍니다.
+        </p>
+        <button type="button" class="btn b_black" id="btnPremiumCancel">
+          확인
+        </button>
+      </div>
+      <div class="premium_layer" id="premiumComplete">
+        <h4><em class="zbIcon icon-check4"></em></h4>
+        <p>
+          <b style="display: block; margin-bottom: 5px"
+            >안심중개사 정책 3가지에 모두 동의하셨습니다.</b
+          >
+          대표 공인중개사, 소속 공인중개사 및 중개보조원 중<br />
+          1명이라도 정책을 위반할 경우 일반중개사로 변경됩니다.<br />
+          일반중개사가 되면 3개월 동안 다시 안심중개사가<br />
+          될 수 없으니 주의 부탁드립니다.
+        </p>
+        <button type="button" class="btn b_black" id="btnPremiumComplete">
+          확인
+        </button>
+      </div>
+
+      <!-- 윈도우 체크 레이어 -->
+      <div
+        class="notice_layer check_layer"
+        id="newWindowCheckPopup"
+        style="display: none; z-index: 999999"
+      >
+        <h3></h3>
+        <div class="item_body">
+          <div>
+            <img
+              src="//s.zigbang.com/legacy/images/v2/common/bg_window_check.png"
+              alt=""
+            />
+          </div>
+          <div class="item_body_result">
+            <div class="browser now">
+              - 접속하신 브라우저 : <span>Internet Explorer<em>9</em></span>
+            </div>
+            <div class="browser recommend">
+              - 권장하는 브라우저 : <span>Chrome</span>
+            </div>
+          </div>
+
+          <div class="btn_os">
+            <a
+              href="https://support.microsoft.com/ko-kr/help/14223/windows-xp-end-of-support"
+              target="_blank"
+              ><img
+                src="//s.zigbang.com/legacy/images/v2/common/btn_detail.png"
+                alt="자세히 보기"
+            /></a>
+          </div>
+        </div>
+
+        <div class="item_check">
+          <label
+            ><input type="checkbox" class="i_check" /> 오늘 하루 더 이상 보지
+            않습니다.</label
+          >
+          <button type="button">[닫기]</button>
+        </div>
+        <button type="button" class="btn-close item_close">
+          <img
+            src="//s.zigbang.com/legacy/images/v2/common/close1.png"
+            alt=""
+          />
+        </button>
+      </div>
+
+      <!-- 브라우져 체크 레이어 -->
+      <div
+        class="notice_layer check_layer"
+        id="newBrowserCheckPopup"
+        style="display: none; z-index: 999999"
+      >
+        <h3></h3>
+        <div class="item_body">
+          <div>
+            <img
+              src="//s.zigbang.com/legacy/images/v2/common/bg_browser_check.png"
+              alt=""
+            />
+          </div>
+          <div class="item_body_result">
+            <div class="browser now">
+              - 접속하신 브라우저 : <span>Internet Explorer<em>9</em></span>
+            </div>
+            <div class="browser recommend">
+              - 권장하는 브라우저 : <span>Chrome</span>
+            </div>
+          </div>
+          <div class="btn_browser">
+            <a
+              href="https://www.google.com/chrome/browser/desktop/index.html"
+              target="_blank"
+              ><img
+                src="//s.zigbang.com/legacy/images/v2/common/btn_chrome.png"
+                alt="크롬 다운로드"
+            /></a>
+
+            <a
+              href="https://support.microsoft.com/ko-kr/help/17621/internet-explorer-downloads"
+              target="_blank"
+              ><img
+                src="//s.zigbang.com/legacy/images/v2/common/btn_ie.png"
+                alt="인터넷 익스플로어 최신버전 다운로드"
+            /></a>
+          </div>
+        </div>
+
+        <div class="item_check">
+          <label
+            ><input type="checkbox" class="i_check" /> 오늘 하루 더 이상 보지
+            않습니다.</label
+          >
+          <button type="button">[닫기]</button>
+        </div>
+        <button type="button" class="btn-close item_close">
+          <img
+            src="//s.zigbang.com/legacy/images/v2/common/close1.png"
+            alt=""
+          />
+        </button>
+      </div>
+
+      <div class="new_user_layer" id="new_user_layer" style="display: none">
+        <div class="item_box">
+          <img
+            src="//s.zigbang.com/ceo/img_content_ceo_popup_330x128_nor.png"
+          />
+          <div class="item border">
+            <p>
+              1. ‘직방 중개사사이트’ 이용을 위해서는 약관 동의가 필요합니다.
+              <strong>약관에 동의하신 후 첫 매물을 등록해보세요.</strong>
+            </p>
+            <a
+              href="https://s.zigbang.com/agree/user-agreement-last.html"
+              target="_blank"
+              >이용 약관 보기</a
+            >
+          </div>
+          <div class="item">
+            <p>
+              2. 직방은 믿을 수 있고 편리한 서비스를 제공하기 위해
+              <strong>‘안심운영정책’을 시행하고 있습니다.</strong>
+            </p>
+            <a href="https://ceo.zigbang.net/products/policy" target="_blank"
+              >안심운영정책 보기</a
+            >
+          </div>
+          <div class="item2">
+            <button type="button" onclick="newUserAgree()">
+              약관 및 정책에 동의합니다.
+            </button>
+            *약관 및 정책에 동의하지 않으시면 직방 중개사 사이트 이용이
+            제한됩니다.
+          </div>
+        </div>
+      </div>
+
+      <!-- js library -->
+      <script
+        type="text/javascript"
+        src="//s.zigbang.com/js/ceo.common_lib.js?vs=2211150414"
+      ></script>
+
+      <!-- external js -->
+      <script
+        type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ea3db6e5761b01c0853a940525cd1cf6"
+        charset="utf-8"
+      ></script>
+      <script
+        type="text/javascript"
+        src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.0/jquery.scrollTo.min.js"
+      ></script>
+      <!--[if lt IE 10]>
+        <script
+          type="text/javascript"
+          src="//s.zigbang.com/js/cdnjs-jquery-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"
+        ></script>
+        <script
+          type="text/javascript"
+          src="//s.zigbang.com/js/jquery-placeholder/2.1.0/jquery.placeholder.js"
+        ></script>
+      <![endif]-->
+      <!-- zigbang js -->
+      <script
+        type="text/javascript"
+        src="//s.zigbang.com/zbee/zbee.js?v=201508241123"
+      ></script>
+      <script
+        type="text/javascript"
+        src="/Content/items.js?v=2211150414"
+      ></script>
+      <script
+        type="text/javascript"
+        src="/Content/dist/polyfills.bundle.js?v=2211150414"
+      ></script>
+      <script
+        type="text/javascript"
+        src="/Content/dist/index.bundle.js?v=2211150414"
+      ></script>
+      <script
+        type="text/javascript"
+        src="/Content/detect.js?v=2211150414"
+      ></script>
+      <script type="text/javascript">
+        var jUser = "";
+        function newUserAgree() {
+          $.ajax({
+            url: "/account/agree",
+            type: "POST",
+            data: {
+              user_no: cParams.user_no,
+            },
+            success: function () {
+              $("#new_user_layer").hide();
+              alert(
+                "약관 동의가 완료되었습니다. 매물을 등록하기 위해서는 대표중개사님 휴대폰의 본인 인증을 꼭 받으셔야 합니다."
+              );
+
+              location.href = "/my";
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+              alert(textStatus);
+            },
+            complete: function (jqXHR, textStatus) {},
+          });
+        }
+        var isAgreedUser = "False";
+
+        console.log(
+          "isLogin",
+          "False",
+          "isAgreedUser",
+          " False",
+          ",isAvailableAddItem:",
+          "False"
+        );
+        if ("False" === "True") {
+          if (isAgreedUser === "False") {
+            $("#new_user_layer").show();
+          } else {
+            if ("False" === "False" && location.href.match("/my") === null) {
+              alert(
+                "약관 동의가 완료되었습니다. 매물을 등록하기 위해서는 대표중개사님 휴대폰의 본인 인증을 꼭 받으셔야 합니다."
+              );
+              location.href = "/my";
+            }
+            $("#premium_agree").show();
+          }
+        }
+        var ua = detect.parse(navigator.userAgent);
+
+        function createBgLayerIfNecessary() {
+          var bgLayer = $(".bg_layer");
+          return (
+            bgLayer.length
+              ? bgLayer
+              : $("<div class='bg-layer' id='bg-layer'></div>")
+          )
+            .appendTo($(document.body))
+            .show();
+        }
+
+        var checkDevice = {
+          cookie_name: "cookie_check_device",
+          timeout: 10 * 1000,
+
+          interval: null,
+
+          init: function (target) {
+            try {
+              if (!zbGetCookie(this.cookie_name)) {
+                var self = this;
+                self.removeEvent();
+                self.startEvent(target);
+              }
+            } catch (e) {
+              console.log(e);
+            }
+          },
+
+          startEvent: function (target) {
+            if (!this.interval) {
+              var self = this;
+
+              self.show(target);
+              document.onmousemove = null;
+            }
+          },
+
+          removeEvent: function () {
+            if (this.interval) {
+              clearTimeout(this.interval);
+              //this.interval = null;
+            }
+          },
+
+          show: function (target) {
+            var self = this;
+
+            if (!zbGetCookie(this.cookie_name)) {
+              var scl =
+                (document.documentElement &&
+                  document.documentElement.scrollTop) ||
+                document.body.scrollTop;
+              var vH =
+                window.innerHeight ||
+                document.documentElement.clientHeight ||
+                document.body.clientHeight;
+              var bxH = target.outerHeight();
+
+              createBgLayerIfNecessary();
+              target.css({
+                top: (bxH > vH ? scl : (vH - bxH) / 2 + scl) + "px",
+              });
+              target.show();
+              target
+                .find(".item_body_result .browser em")
+                .text(ua.browser.major);
+              $(".item_close")
+                .unbind("click")
+                .click(function () {
+                  self.hide(target);
+                });
+
+              target.find(".item_check button").on("click", function () {
+                target.find(".i_check").is(":checked") &&
+                  zbSetCookie(self.cookie_name, 1);
+                self.hide(target);
+              });
+            }
+          },
+          hide: function (target) {
+            $(".bg_layer").hide();
+            target.remove();
+          },
+        };
+
+        if (jUser.length < 1) {
+          /*
+				 ua.browser.family= "IE";
+				 ua.browser.major=9;
+
+				 ua.os.family="Windows";
+				 ua.os.major=7;
+				 */
+
+          if (!ua.device.type.match("Mobile")) {
+            if (ua.os.family.match("Windows")) {
+              if (ua.os.family.match("XP")) {
+                checkDevice.init($("#newWindowCheckPopup"));
+              } else {
+                if (parseInt(ua.os.family.split(" ")[1]) < 7) {
+                  checkDevice.init($("#newWindowCheckPopup"));
+                } else {
+                  if (ua.browser.family.match("IE")) {
+                    if (parseInt(ua.browser.major) < 10) {
+                      checkDevice.init($("#newBrowserCheckPopup"));
+                    }
+                  }
+                }
+              }
+            } else {
+              if (ua.browser.family.match("IE")) {
+                if (parseInt(ua.browser.major) < 10) {
+                  checkDevice.init($("#newBrowserCheckPopup"));
+                }
+              }
+            }
+          }
+        }
+      </script>
+
+      <script>
+        $(function () {
+          // 20210430  아이엠삼송 배너 추가및 swap 처리 해재, 차후 재사용을 위해 주석으로 남김
+          // ceo 배너추가 slick-slide width 설정
+          /*
+			var slickWidth = $(".login_div").outerWidth();
+			$("#main_banner").css("width",slickWidth);
+			*/
+          setMainBanner("False", $("#main_banner"));
+          mainFns.mainSendPinpoint("중개사메인_진입", {});
+        });
+      </script>
+    </div>
+    <div id="layer_datepicker" class="bg"></div>
+    <script type="text/javascript">
+      initCommonSettings();
+      $(function () {
+        initLayout("False");
+      });
+    </script>
+  </body>
+</html>
