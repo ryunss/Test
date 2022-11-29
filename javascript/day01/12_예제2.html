@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>예제 - 2</title>
+    <style>
+      .redcolor {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>예제 - 2</h2>
+    <table border="1">
+      <caption>
+        요금표
+      </caption>
+      <tr>
+        <th>구분</th>
+        <th>요금</th>
+      </tr>
+      <tr id="r1">
+        <td>아동</td>
+        <td>무료</td>
+      </tr>
+      <tr id="r2">
+        <td>청소년</td>
+        <td>2000원</td>
+      </tr>
+      <tr id="r3">
+        <td>성인</td>
+        <td>5000원</td>
+      </tr>
+    </table>
+  </body>
+  <script>
+    //입력한 나이대에 맞추어서 해당하는 곳 앞에 ★와 함께
+    //그 행 통째로 배경색을 #ef5350 색으로 바꾸기
+    //잘못된 나이대를 입력했다면 '다시 시도해주세요' 알럿 띄워주고
+    //아무것도 하지 않기
+
+    let r1 = document.getElementById("r1");
+    let r2 = document.getElementById("r2");
+    let r3 = document.getElementById("r3");
+    let result = prompt("입력");
+
+    if (result == "아동") {
+      r1.classList.add("redcolor");
+    } else if (result == "청소년") {
+      r2.classList.add("redcolor");
+    } else if (result == "성인") {
+      r3.classList.add("redcolor");
+    } else {
+      alert("다시 시도해주세요");
+    }
+  </script>
+</html>

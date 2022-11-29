@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>빠른 for문</h2>
+  </body>
+  <script>
+    const arr = [10, 20, 30, 40, 50];
+
+    for (let a in arr) {
+      console.log(arr[a]);
+    }
+
+    const mycar = { brand: "Ferrari", color: "Red" };
+    for (let key in mycar) {
+      console.log(key); // brand, color
+      console.log(mycar[key]); // Ferrari, red
+    }
+    console.log("------------------------");
+
+    for (let data of arr) {
+      console.log(data);
+    }
+
+    // mycar는 단순 객체이고 반복자 형태가 아니기 때문에 for of문을 사용할 수 없음
+    for(let value of mycar){
+        console.log(value); // mycar는 반복할 수 있는 iterable 이 아니기 때문에 돌릴 수 없다. 배열형태만 돌릴 수 있다.
+    }
+  </script>
+</html>

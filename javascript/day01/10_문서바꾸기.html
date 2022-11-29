@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .redTxt{
+            color:red;
+        }
+    </style>
+  </head>
+  <body>
+    <h2>문서 바꾸기</h2>
+    <p id="txt1">이 텍스트의 색깔이 변한다</p>
+    <p id="txt2"></p>
+
+    <input type="button" value="눌러봐" onclick="document.getElementById('txt1').style.color='green'">
+  </body>
+  <script>
+    const pTag1 = document.getElementById("txt1");
+
+    pTag1.style.color = "blue";
+    console.log(pTag1.innerHTML);
+
+    const pTag2 = document.getElementById("txt2");
+    pTag2.innerHTML = "추가된 문자열";
+    pTag2.classList.add("redTxt");
+  </script>
+</html>

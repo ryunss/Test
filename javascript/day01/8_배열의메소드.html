@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>배열의메소드</h2>
+</body>
+<script>
+    const arr = [10, 20, 30];
+
+    // push
+    arr.push(40);
+    console.log(arr);
+
+    // pop
+    let data = arr.pop();
+    console.log(arr);
+    console.log(data);
+
+    //shift
+    data = arr.shift();
+    console.log(arr);
+    console.log(data);
+
+    const arr1 = [10,20,30];
+    const arr2 = [40,50,60];
+
+    //concat
+    const arr3 = arr1.concat(arr2);
+    console.log(arr3);
+
+    //join
+    let str = arr3.join("★");
+    console.log(str);
+
+    let arr4 = [100,80,4,7,60,1,100000];
+
+    //reverse
+    arr4.reverse();
+    console.log(arr4);
+
+    //sort
+    //그냥 사용하면 사전순으로 정렬
+    arr4.sort();
+    console.log(arr4);
+
+    //만약 숫자 크기로 정렬하고 싶다면
+    arr4.sort(function(a,b){ return a-b;}); // 오름차순
+    console.log(arr4);
+    arr4.sort(function(a,b){ return b-a;}); // 내림차순
+    console.log(arr4);
+
+</script>
+</html>
