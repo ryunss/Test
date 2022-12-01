@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수 실습 - 1</title>
+  </head>
+  <body>
+    <h2>함수 실습 - 1</h2>
+    <input type="button" value="주사위 게임하기" onclick="dice()" />
+    <input type="button" value="가위바위보 게임하기" onclick="vpsGame()" />
+  </body>
+  <script>
+    //1. 주사위게임
+    //랜덤한 주사위 숫자(1~6)를 하나 정해놓고
+    //프롬프트로 그 숫자를 맞추면 성공
+    function dice() {
+      const random = Math.floor(Math.random() * 6) + 1;
+      while (true) {
+        let uservalue = prompt("1~6 숫자 중 하나 입력");
+        if (random == uservalue) {
+          alert("정답입니다.");
+          break;
+        } else if (random != uservalue) {
+          alert("틀렸습니다.");
+        }
+      }
+    }
+
+    //2. 가위바위보 게임
+    //매번 컴퓨터는 가위, 바위, 보 중 하나를 선택
+    //프롬프트로 입력을 해서 이기면 성공
+    //성공하기까지의 과정을 body에 써주기
+    //컴퓨터 : 가위 / 나 : 가위
+    //비겼습니다!
+    //-----------------------
+    //컴퓨터 : 보 / 나 : 가위
+    //이겼습니다! 종료합니다!
+    //-----------------------
+
+    function vpsGame() {
+      const vps = ["가위", "바위", "보"];
+      const user = ["바위", "보", "가위"];
+      const random = Math.floor(Math.random() * 3) + 1;
+      console.log(vps[random]);
+      while (true) {
+        let uservalue = prompt("가위 바위 보 중 하나 입력");
+        console.log(`${user.indexOf(uservalue)}`);
+        if (`${user.indexOf(uservalue)}` < 0 || `${user.indexOf(uservalue)}` > 3 ) {
+          console.log("가위 바위 보 중 하나만 입력하세요.");
+        } else if (vps[random] == uservalue) {
+          console.log(`컴퓨터 : ${vps[random]} / 나 : ${uservalue}`);
+          console.log(`비겼습니다!`);
+        } else if (random == `${user.indexOf(uservalue)}`) {
+          console.log(`컴퓨터 : ${vps[random]} / 나 : ${uservalue}`);
+          console.log(`이겼습니다! 종료합니다!`);
+          break;
+        } else {
+          console.log(`컴퓨터 : ${vps[random]} / 나 : ${uservalue}`);
+          console.log(`졌습니다!`);
+        }
+      }
+    }
+  </script>
+</html>

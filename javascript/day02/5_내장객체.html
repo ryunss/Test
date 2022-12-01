@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>내장 객체</h2>
+  </body>
+  <script>
+    const str1 = "Hello Javascript!";
+
+    console.log(`문자열의 길이 : ${str1.length}`);
+    console.log(`J의 인덱스 : ${str1.indexOf("J")}`);
+    console.log(`a중 뒤에 있는 것의 인덱스 : ${str1.lastIndexOf("a")}`);
+    console.log(`문자열의 6번째 글자 : ${str1.charAt(6)}`);
+    console.log(`문자열의 6번째 글자 : ${str1[6]}`);
+    console.log(`Java 문자열의 포함여부 : ${str1.includes("Java")}`);
+    console.log(`6번째 글자부터 끝까지 : ${str1.substring(6)}`);
+    console.log(`6번째 글자부터 10번 전까지 : ${str1.substring(6, 10)}`);
+    console.log(`6번째 글자부터 4글자 : ${str1.substr(6, 4)}`);
+
+    const str2 = "apple/banana/cherry/";
+
+    console.log(str2.split("/"));
+    console.log(str2.replace("cherry", "durian"));
+    console.log(str2); // replace 해도 원본은 변하지 않는다.
+
+    const str3 = "           result  ";
+
+    console.log(str3.trim());
+    console.log("----------------------------------------------");
+
+    console.log(Math.min());
+    console.log(Math.max());
+
+    console.log(Math.min(1, 10, -10, 1000, "100"));
+    console.log(Math.floor(10.99999999)); // 내림
+    console.log(Math.ceil(10.00000000001)); // 올림
+    console.log(Math.round(10.6)); // 반올림
+
+    // 랜덤 숫자
+    //0.00000001 ~ 0.99999999
+
+    //0.00000001 ~ 99.999999
+    // Math.random()*100
+
+    //0 ~ 99
+    // Math.floor(Math.random()*100)
+
+    //101 ~ 200
+    console.log(Math.floor(Math.random() * 100) + 101);
+  </script>
+</html>
