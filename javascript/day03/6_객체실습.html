@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>객체 실습</title>
+    <link rel="stylesheet" href="./css/object_task.css" />
+  </head>
+  <body>
+    <fieldset>
+      <legend>자동차 주행</legend>
+      <textarea id="txt">현재 상태 표시</textarea>
+      <img id="img" src="./images/출발전.png" />
+      <input type="text" id="check" onkeypress="pw_check()" />
+      <button class="btn" onclick="engineOn()">시동 켜기</button>
+      <button class="btn" onclick="engineOff()">시동 끄기</button>
+      <button>초기화</button>
+    </fieldset>
+  </body>
+  <script>
+    let first_pw = prompt("초기 비밀번호 설정");
+
+    let flag1 = false;
+    let flag2 = false;
+    let cnt = 1;
+
+    function pw_check() {
+      return document.getElementById("check").value;
+    }
+
+    function engineOn() {
+      if (flag1) {
+        check.style.visibility = "visible";
+      } else if (flag2) {
+        txt.innerHTML = "시동이 이미 켜져있습니다.";
+      } else if (pw_check() == first_pw) {
+        cnt = 1;
+        flag2 = true;
+        txt.innerHTML = "시동 켜짐";
+        document.getElementById("img").src = "./images/시동켜기.gif";
+      } else if (cnt == 3) {
+        txt.innerHTML = "경찰 출동 중";
+        document.getElementById("img").src = "./images/경찰.png";
+        let btn = document.getElementsByClassName(".btn");
+        for (let b of btn) {
+          b.style.display = "none";
+        }
+      } else if (pw_check() != first_pw) {
+        txt.innerHTML = "비밀번호 오류 : " + cnt + "회";
+        cnt++;
+      }
+    }
+
+    function engineOff() {
+      txt.innerHTML = "시동 꺼짐";
+      document.getElementById("img").src = "./images/시동끄기.gif";
+      flag2 = false;
+      flag1 = false;
+    }
+  </script>
+</html>

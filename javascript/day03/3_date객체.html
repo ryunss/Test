@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>date 객체</h2>
+    <p id="clock"></p>
+
+    <h3 id="stopwatch"></h3>
+    <input type="button" value="측정 시작" onclick="timeStart()" />
+    <input type="button" value="기록" />
+    <input type="button" value="중지" />
+  </body>
+  <script>
+    console.log(new Date());
+
+    console.log(new Date(22, 11, 30)); // 1922-12-30
+    console.log(new Date(2022, 10, 30)); // 2022-11-30
+
+    console.log(new Date(2022, 10, 30, 10, 35, 29)); // 2022-11-30 10:35:29
+
+    const date = new Date();
+    console.log(`현재 년도 : ${date.getFullYear()}`);
+    console.log(`현재 월 : ${date.getMonth() + 1}`);
+    console.log(`현재 일 : ${date.getDate()}`);
+
+    console.log(`시 : ${date.getHours()}`);
+    console.log(`분 : ${date.getMinutes()}`);
+    console.log(`초 : ${date.getSeconds()}`);
+
+    // ---------------------------------------------------------
+    let clock = document.getElementById("clock");
+
+    const getClock = function () {
+      const date1 = new Date();
+      const hour1 = date1.getHours();
+      const minute1 = date1.getMinutes();
+      const second1 = date1.getSeconds();
+      clock.innerText = `${hour1} : ${minute1} : ${second1}`;
+    };
+
+    getClock();
+    setInterval(getClock, 1000);
+    // ---------------------------------------------------------
+    let stopwatch = document.getElementById("stopwatch");
+
+    function timeStart() {
+      const date2 = new Date(0, 0, 0, 0, 0, 0, 0);
+
+      const hour2 = date2.getHours();
+      const minute2 = date2.getMinutes();
+      const second2 = date2.getSeconds();
+      const millisec = date2.getMilliseconds();
+
+      // stopwatch.innerText = `${hour2} : ${minute2} : ${second2} : ${millisec}`;
+      // console.log(`${hour2} : ${minute2} : ${second2} : ${millisec}`);
+      // setInterval(timeStart, 100);
+    }
+
+    // ---------------------------------------------------------
+  </script>
+</html>

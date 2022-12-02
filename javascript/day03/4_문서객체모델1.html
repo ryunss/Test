@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>문서객체모델 - 1</h2>
+    <ul>
+      <li name="view">HTML</li>
+      <li>CSS</li>
+      <li class="js">Javascript</li>
+      <li class="js">Ajax</li>
+      <li id="server">Tomcat</li>
+      <li id="back">Servlet</li>
+    </ul>
+    <input type="button" value="name으로 요소찾기" onclick="f1();" />
+    <input type="button" value="class로 요소찾기" onclick="f2()" />
+    <input type="button" value="id로 요소찾기" onclick="f3()" />
+    <input type="button" value="TagName으로 요소찾기" onclick="f4();" />
+    <p class="A B C" id="pTag"></p>
+  </body>
+  <script>
+    function f1() {
+      //    [<li name="view">HTML</li>]
+      const view = document.getElementsByName("view");
+      view[0].style.color = "red";
+      console.log(view[0]);
+    }
+
+    function f2() {
+      // [<li class="js">Javascript</li>, <li class="js">Ajax</li>]
+      const js = document.getElementsByClassName("js");
+      for (let tag of js) {
+        // <input type='button' value='Javascript'>
+        tag.innerHTML = "<input type='button' value='" + tag.innerHTML + "'>";
+      }
+    }
+
+    function f3() {
+      // <li id="server">Tomcat</li>
+      const server = document.getElementById("server");
+      server.setAttribute("title", "server 태그");
+    }
+
+    function f4() {
+      const li = document.getElementsByTagName("li");
+      for (let i = 0; i < li.length; i++) {
+        li[i].setAttribute("class", "li" + i);
+      }
+    }
+
+    const pTag = document.getElementById("pTag");
+
+    pTag.classList.add("D");
+    pTag.classList.remove("B");
+
+    // 클래스 추가, 삭제하는 다른 방법
+
+    // let tmp = pTag.getAttribute("class"); // A B C
+    // pTag.setAttribute("class", tmp+" D");
+
+    // tmp = pTag.getAttribute("class"); // A B C D
+    // const arClass = tmp.split(" "); //[A, B, C, D]
+    // const result = new Array();
+
+    // for(let i=0; i<arClass.length; i++){
+    //     if(arClass[i] != "B"){
+    //         result.push(arClass[i]);
+    //     }
+    // }
+    // // result : [A, C, D]
+    // pTag.setAttribute("class",result.join(" "));
+
+    document.querySelector("ul>li:nth-child(2)").style.color = "blue";
+    
+    // document.getElementsByClassName("js"); 같음
+    document.querySelectorAll(".js");
+  </script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
