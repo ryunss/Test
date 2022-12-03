@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // window.onload : HTML 해석이 끝난 후 호출할 함수
+      window.onload = function () {
+        const gnb = document.getElementById("gnb");
+        console.log(gnb);
+
+        console.log(gnb.parentNode);
+        console.log(gnb.childNodes); // 비 요소 노드들도 포함
+        // text, comment, text, ul, text
+        console.log(gnb.children); // 요소 노드만 꺼내옴
+        // ul
+
+        gnb.children[0].style.color = "blue";
+
+        const ul = gnb.children[0];
+
+        console.log(ul.children[1]); // <li>내용2</li>
+        console.log(ul.children[1].nextSibling); // #text(텍스트노드)
+        console.log(ul.children[1].nextElementSibling); // <li>내용3</li>
+
+        console.log(ul.children[1].previousSibling);
+        ul.children[1].previousElementSibling.style.listStyle = "none";
+
+        console.log(ul.firstChild); // #text
+        console.log(ul.firstElementChild);
+      };
+    </script>
+  </head>
+  <body>
+    <h2>문서객체모델 - 2</h2>
+    <div>
+      <nav id="gnb">
+        <!-- 이 양쪽에는 줄바꿈을 담기 위한 text 노드가 숨어있음-->
+        <ul>
+          <li class="first">내용 1</li>
+          <li>내용 2</li>
+          <li>내용 3</li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>문서객체 모델 실습 - 2</h2>
+    <p>
+      요리명
+      <input type="text" />
+    </p>
+    <textarea cols="50" rows="10"></textarea>
+    <input
+      type="button"
+      value="단계추가"
+      class="addStep"
+      onclick="addTextarea();"
+    />
+    <p id="btn_area">
+      <input type="button" value="등록" />
+    </p>
+  </body>
+  <script>
+    function addTextarea() {
+      const btn_before = document.getElementById("btn_area");
+
+      const textBox = document.createElement("textarea");
+      const hr = document.createElement("hr");
+      const btn = document.createElement("btn");
+      btn.innerHTML = "<input type='button' value='단계추가' onclick='addTextarea()'/>";
+
+      textBox.setAttribute("id", "cl");
+      textBox.setAttribute("rows", "10");
+      textBox.setAttribute("cols", "50");
+
+      document.body.insertBefore(hr, btn_before);
+      document.body.insertBefore(textBox, btn_before);
+      document.body.insertBefore(btn, btn_before);
+    }
+  </script>
+</html>

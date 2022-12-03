@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>노드 제거</h2>
+    <div id="list">
+      <p id="item1">HTML</p>
+      <p id="item2" style="background-color: gold">CSS</p>
+      <p>Spring</p>
+      <p>Servlet</p>
+    </div>
+    <button onclick="removeNode()">요소 노드 삭제</button>
+    <button onclick="removeAttr()">속성 노드 삭제</button>
+  </body>
+  <script>
+    function removeNode() {
+        const parent = document.getElementById("list");
+        const child = document.getElementById("item1");
+
+        const reuslt = parent.removeChild(child);
+        // console.log(result); 삭제 한 값을 저장해둘 수 있음.
+    }
+    function removeAttr() {
+        const item2 = document.getElementById("item2");
+        item2.removeAttribute("style");
+    }
+  </script>
+</html>

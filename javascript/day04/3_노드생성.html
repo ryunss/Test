@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>노드 생성</h2>
+    <p id="el">새로운 문장(노드)이 이 앞에 추가 됨</p>
+    <p id="attr">이 단락에 새로운 속성이 추가됨</p>
+    <p id="text"></p>
+
+    <button onclick="createNode()">요소노드생성</button>
+    <button onclick="createAttr()">속성노드생성</button>
+    <button onclick="createText()">텍스트노드생성</button>
+  </body>
+  <script>
+    function createNode() {
+      // <p></p>
+      const newNode = document.createElement("p");
+      newNode.innerHTML = "<b>새로운 요소🕶</b>";
+
+      // 속성노드 생성 응용
+      const cl = document.createAttribute("class");
+      cl.value = "new";
+      newNode.setAttributeNode(cl);
+
+      const el = document.getElementById("el");
+      document.body.insertBefore(newNode, el);
+    }
+    function createAttr() {
+      const attr = document.getElementById("attr");
+
+      //   attr.setAttribute("style","color:deeppink; background-color:deepskyblue;");
+
+      const newAttr = document.createAttribute("style");
+      newAttr.value = "color:deeppink; background-color:deepskyblue;";
+
+      attr.setAttributeNode(newAttr);
+    }
+    function createText() {
+      const text = document.getElementById("text");
+      const newText = document.createTextNode("Hello Javascript!");
+      text.appendChild(newText);
+    }
+  </script>
+</html>

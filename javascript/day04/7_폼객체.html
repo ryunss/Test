@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+
+        onsubmit : form이 제출될 때 수행
+            return false(제출 안함)
+            return true(제출 함)
+    -->
+    <h2>폼객체</h2>
+    <form action="search.jsp" name="frm" onsubmit="return sendit()">
+        <span id="txt"></span><br>
+        <input type="search" name="search" id="search" placeholder="검색어를 입력하세요">
+        <input type="submit" value="검색">
+    </form>
+</body>
+<script>
+const frm = document.frm;
+const search = frm.search;
+const txt = document.getElementById("txt");
+
+console.log(search.placeholder);
+search.placeholder = "검색어 입력";
+
+function sendit(){
+    if(search.value == ""){
+        alert("검색어를 입력하세요");
+        search.focus();
+        return false;
+    }
+
+    if(search.value.length < 2){
+        txt.innerHTML = "검색어는 두 자 이상 입력하세요!";
+        search.value="";
+        search.focus();
+        return false;
+    }
+    return true;
+}
+</script>
+</html>
