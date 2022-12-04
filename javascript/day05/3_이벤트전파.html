@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #divBox{
+            width: 70%;
+            height: 300px;
+            border : 3px solid red;
+        }
+        #pBox{
+            width: 400px;
+            height: 150px;
+            border : 3px solid blue;
+        }
+        #spanBox{
+            border: 3px solid green;
+        }
+    </style>
+</head>
+<body>
+    <h2>이벤트 전파</h2>
+    <div id="divBox">
+        <p id="pBox">
+            박스 안의 여러 곳을 <span id="spanBox">클릭</span>하세요
+        </p>
+    </div>
+    <p id="text"></p>
+</body>
+<script>
+    const text = document.getElementById("text");
+    const clickDiv = function(e){
+        text.innerHTML += "div 요소를 클릭했어요<br>"
+    }
+    const clickP = function(e){
+        text.innerHTML += "p 요소를 클릭했어요<br>"
+        e.stopPropagation(); // 전파막음
+    }
+    const clickSpan = function(e){
+        text.innerHTML += "span 요소를 클릭했어요<br>"
+        e.stopPropagation(); // 전파막음
+    }
+
+    document.getElementById("divBox").addEventListener('click', clickDiv);
+    document.getElementById("pBox").addEventListener('click', clickP);
+    document.getElementById("spanBox").addEventListener('click', clickSpan);
+
+    // document.getElementById("divBox").addEventListener('click', clickDiv, true);
+    // document.getElementById("pBox").addEventListener('click', clickP, true);
+    // document.getElementById("spanBox").addEventListener('click', clickSpan , true);
+</script>
+</html>

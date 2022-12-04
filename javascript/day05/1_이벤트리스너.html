@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>이벤트리스너</h2>
+    <p><button id="event">이벤트 버튼</button></p>
+    <p><button id="del">이벤트 삭제 버튼</button></p>
+    <p id="text"></p>
+  </body>
+  <script>
+    const text = document.getElementById("text");
+
+    window.onload = function () {
+      const event = document.getElementById("event");
+
+      event.addEventListener("click", function () {
+        text.innerHTML = "<b>버튼을 클릭했어요</b>";
+      });
+      event.addEventListener('mouseover', mouseoverBtn)
+      event.addEventListener('mouseout', mouseoutBtn)
+
+      const del = document.getElementById('del');
+      del.addEventListener('click', function(){
+        event.removeEventListener('mouseover', mouseoverBtn);
+        event.removeEventListener('mouseout', mouseoutBtn);
+        
+        // 지금 클릭 이벤트의 리스너는 익명함수로 전달했기 때문에 제거 불가능
+      })
+    };
+    function mouseoverBtn() {
+      text.innerHTML = "<b>버튼 위에 마우스가 올라갔어요</b>";
+    }
+    function mouseoutBtn() {
+      text.innerHTML = "<b>버튼 밖으로 마우스가 나갔어요</b>";
+    }
+  </script>
+</html>
