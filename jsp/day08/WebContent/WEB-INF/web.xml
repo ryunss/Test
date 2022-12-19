@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>day08</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+  	<servlet-name>B</servlet-name> <!-- 서블릿 이름은 B 로 만든다. -->
+  	<servlet-class>com.koreait.servlet.B</servlet-class> <!-- 이 서블릿은 com.koreait.servlet 패키지 안의 B 클래스다. -->
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>B</servlet-name> <!-- 서블릿 B 의 이름을 찾을때는 -->
+  	<url-pattern>/b</url-pattern> <!-- /b 일때 서블릿 B 로 간다 -->
+  </servlet-mapping>
+</web-app>
