@@ -44,12 +44,12 @@
 </head>
 <body>
    <div id="wrap">
-      <form name="loginForm" action="" method="post">
+      <form name="loginForm" action="${cp}/user/userloginok.us" method="post">
          <table>
             <tr>
                <th>아이디</th>
                <td>
-                  <input type="text" name="userid">
+                  <input type="text" name="userid" value="${cookie.joinid.value}">
                </td>
             </tr>         
             <tr>

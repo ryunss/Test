@@ -95,7 +95,7 @@
 </style>
 </head>
 <body>
-   <form name="joinForm" method="post" action="${cp}/user/userjoinok.us" onsubmit="">
+   <form name="joinForm" method="post" action="${cp}/user/userjoinok.us" onsubmit="return sendit();">
       <table>
          <tr>
             <td id="result" colspan="2"></td>
@@ -175,4 +175,8 @@
    </form>
 </body>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+	const cp = "${cp}";
+</script>
+<script src="${cp }/app/user/user.js"></script>
 </html>

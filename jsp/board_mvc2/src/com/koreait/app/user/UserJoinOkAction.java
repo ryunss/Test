@@ -1,5 +1,6 @@
 package com.koreait.app.user;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -32,6 +33,8 @@ public class UserJoinOkAction implements Action {
 		ActionTo transfer = new ActionTo();
 		transfer.setRedirect(true);
 		if(udao.join(user)) {
+			Cookie cookie = new Cookie("joinid", userid);
+			resp.addCookie(cookie);
 			transfer.setPath(req.getContextPath()+"/user/userlogin.us");
 		}else {
 			// localhost:9090/??? < 자동으로 index.jsp로 감

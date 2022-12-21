@@ -1,4 +1,4 @@
-package com.koreait.app.user;
+package com.koreait.app.board;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.koreait.action.ActionTo;
 
-public class UserFrontController extends HttpServlet{
+public class BoardFrontController extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
 
@@ -23,42 +23,9 @@ public class UserFrontController extends HttpServlet{
 		ActionTo transfer = null;
 		
 		switch(command) {
-		case "/user/userjoin.us":
+		case "/board/boardlist.bo":
 			transfer = new ActionTo();
-			transfer.setPath("/app/user/joinview.jsp");
-			transfer.setRedirect(false); // forward 
-			break;
-		case "/user/userlogin.us":
-			transfer = new ActionTo();
-			transfer.setPath("/app/user/loginview.jsp");
-			transfer.setRedirect(false);
-			break;
-		case "/user/userjoinok.us":
-			// 처리
-			try {
-				transfer = new UserJoinOkAction().execute(req, resp);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			break;
-		case "/user/userloginok.us":
-			try {
-				transfer = new UserLoginOkAction().execute(req, resp);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			break;
-		case "/user/checkidok.us":
-			try {
-				new CheckIdOkAction().execute(req, resp);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			break;
-		case "/user/userlogout.us":
-			req.getSession().removeAttribute("loginUser");
-			transfer = new ActionTo();
-			transfer.setPath("/");
+			transfer.setPath("/app/board/listview.jsp");
 			transfer.setRedirect(false);
 			break;
 		}
