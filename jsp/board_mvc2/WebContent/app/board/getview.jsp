@@ -156,26 +156,26 @@
             <tr height="30px">
                <th align="center" width="150px">제목</th>
                <td>
-                  <input name="boardtitle" size="50" maxlength="50" readonly value="${board[0].boardtitle }">
+                  <input name="boardtitle" size="50" maxlength="50" readonly value="${board.boardtitle }">
                </td>
             </tr>
             <tr height="30px">
                <th align="center" width="150px">아이디</th>
                <td>
-                  <input name="userid" size="50" maxlength="50" readonly value="${board[0].userid }">
+                  <input name="userid" size="50" maxlength="50" readonly value="${board.userid }">
                </td>
             </tr>
             <tr>
                <th>조회수</th>
                <td>
-                  ${board[0].readcount }
+                  ${board.readcount }
                </td>
             </tr>
             <tr height="300px">
                <th align="center" width="150px">내 용</th>
                <td>
                   <textarea name="boardcontents" style="width:700px;height:290px;
-                  resize:none" readonly>${board[0].boardcontents }</textarea>
+                  resize:none" readonly>${board.boardcontents }</textarea>
                </td>
             </tr>
             <tr>

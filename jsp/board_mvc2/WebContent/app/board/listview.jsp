@@ -142,7 +142,7 @@
          		<c:forEach items="${boardList }" var="board">
 	         		<tr>
 			            <td>${board.boardnum }</td>
-			            <td><a href="${cp}/board/boardview.bo?boardnum=${board.boardnum}&page=${page}">${board.boardtitle }</a></td>
+			            <td><a href="${cp}/board/boardview.bo?boardnum=${board.boardnum}&page=${page}&q=${keyword}">${board.boardtitle }</a></td>
 			            <td>${board.userid }</td>
 			            <td>${board.regdate }<c:if test="${board.regdate != board.updatedate }">(수정됨)</c:if></td>
 			            <td>${board.readcount }</td>

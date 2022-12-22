@@ -1,7 +1,5 @@
 package com.koreait.app.board;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -18,8 +16,8 @@ public class BoardDetailAction implements Action {
 		String keyword = req.getParameter("q");
 		String boardnum = req.getParameter("boardnum");
 		
-		List<BoardDTO> boardDetail = bdao.getBoardDetail(boardnum);
-		
+//		List<BoardDTO> boardDetail = bdao.getBoardDetail(boardnum);
+		BoardDTO boardDetail = bdao.getBoardDetail(boardnum);
 		req.setAttribute("board", boardDetail);
 		
 		ActionTo transfer = new ActionTo();

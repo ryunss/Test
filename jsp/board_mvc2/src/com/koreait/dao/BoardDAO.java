@@ -43,8 +43,8 @@ public class BoardDAO {
 		return result;
 	}
 
-	public List<BoardDTO> getBoardDetail(String boardnum) {
-		return sqlsession.selectList("Board.getBoardDetail", boardnum);
+	public BoardDTO getBoardDetail(String boardnum) {
+		return sqlsession.selectOne("Board.getBoardDetail", boardnum);
 	}
 
 	
