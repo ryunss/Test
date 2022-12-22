@@ -124,7 +124,7 @@
             <td><h3>MVC 게시판</h3></td>
          </tr>
          <tr align="right" valign="middle">
-            <td>글 개수 : 00</td>
+            <td>글 개수 : ${totalCnt}</td>
          </tr>
       </table>
 
@@ -137,29 +137,44 @@
             <th width="17%">날짜</th>
             <th width="10%">조회수</th>
          </tr>
-         <tr>
-            <td>1</td>
-            <td><a href="">바보</a></td>
-            <td>apple</td>
-            <td>2022-12-21 13:38:00(수정됨)</td>
-            <td>100</td>
-         </tr>
-         <tr>
-            <td colspan="5" style="text-align: center; font-size: 20px;">등록된 게시글이 없습니다.</td>
-         </tr>
+         <c:choose>
+         	<c:when test="${boardList != null and boardList.size() > 0}">
+         		<c:forEach items="${boardList }" var="board">
+	         		<tr>
+			            <td>${board.boardnum }</td>
+			            <td><a href="${cp}/board/boardview.bo?boardnum=${board.boardnum}&page=${page}">${board.boardtitle }</a></td>
+			            <td>${board.userid }</td>
+			            <td>${board.regdate }<c:if test="${board.regdate != board.updatedate }">(수정됨)</c:if></td>
+			            <td>${board.readcount }</td>
+			         </tr>
+         		</c:forEach>
+         	</c:when>
+         	<c:otherwise>
+		         <tr>
+		            <td colspan="5" style="text-align: center; font-size: 20px;">등록된 게시글이 없습니다.</td>
+		         </tr>
+         	</c:otherwise>
+         </c:choose>
       </table><br>
 
       <!-- 페이징 처리하는 테이블 -->
       <table class="pagination">
          <tr align="center" valign="middle">
             <td>
-               <a href="">&lt;</a>
-               <span class="nowPage">1</span>
-               <a href="">2</a>
-               <a href="">3</a>
-               <a href="">4</a>
-               <a href="">5</a>
-               <a href="">&gt;</a>
+            	<c:if test="${startPage != 1 }">
+  	             	<a href="">&lt;</a>
+                </c:if>
+                <c:forEach var="i" begin="${startPage }" end="${endPage }">
+                	<c:if test="${i == page }">
+ 	    	          <span class="nowPage">${i}</span>
+                	</c:if>
+                	<c:if test="${i != page }">
+                		<a href="#">${i}</a>                	
+                	</c:if>
+                </c:forEach>
+               	<c:if test="${endPage != totalPage }">
+   		            <a href="">&gt;</a>
+               	</c:if>
             </td>
          </tr>
       </table> 
@@ -170,8 +185,20 @@
          </tr>
       </table>
       <div class="search_area">
-         <input type="search" id="q" name="q"> <input type="button" value="검색" onclick="">
+         <input type="search" id="q" name="q"> <input type="button" value="검색" onclick="search()">
       </div>
    </div>
 </body>
+<script>
+	function search(){
+		const q = document.getElementById("q");
+		// 유효성검사
+		if(q.value == ""){
+			alert("검색어를 입력해주세요!");
+			q.focus();
+			return false;
+		}
+		location.href="${cp}/board/boardlist.bo?q="+q.value;
+	}
+</script>
 </html>

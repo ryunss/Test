@@ -24,8 +24,25 @@ public class BoardFrontController extends HttpServlet{
 		
 		switch(command) {
 		case "/board/boardlist.bo":
+			try {
+				transfer = new BoardListAction().execute(req,resp);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
 			transfer = new ActionTo();
 			transfer.setPath("/app/board/listview.jsp");
+			transfer.setRedirect(false);
+			break;
+		case "/board/boardview.bo":
+			try {
+				transfer = new BoardDetailAction().execute(req,resp);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			transfer = new ActionTo();
+			transfer.setPath("/app/board/getview.jsp");
 			transfer.setRedirect(false);
 			break;
 		}
