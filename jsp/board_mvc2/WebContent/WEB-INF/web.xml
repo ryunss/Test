@@ -17,8 +17,7 @@
   	<servlet-name>UserFrontController</servlet-name>
   	<url-pattern>*.us</url-pattern>
   </servlet-mapping>
-  
-    <servlet>
+  <servlet>
   	<servlet-name>BoardFrontController</servlet-name>
   	<servlet-class>com.koreait.app.board.BoardFrontController</servlet-class>
   </servlet>
@@ -27,3 +26,11 @@
   	<url-pattern>*.bo</url-pattern>
   </servlet-mapping>
 </web-app>
+
+
+
+
+
+
+
+

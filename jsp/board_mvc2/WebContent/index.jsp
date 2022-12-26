@@ -6,11 +6,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>최종예제</title>
 </head>
 <body>
 	<h2>INDEX</h2>
-	<a href="${cp}/user/userjoin.us">회원가입</a>
-	<a href="${cp}/user/userlogin.us">로그인</a>
+	<a href="${cp}/user/userjoin.us">회원가입</a> <a href="${cp}/user/userlogin.us">로그인</a>
 </body>
 </html>

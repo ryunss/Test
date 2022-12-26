@@ -9,11 +9,10 @@ import com.koreait.action.ActionTo;
 import com.koreait.dao.UserDAO;
 import com.koreait.dto.UserDTO;
 
-public class UserJoinOkAction implements Action {
-	
+public class UserJoinOkAction implements Action{
 	@Override
-	public ActionTo execute(HttpServletRequest req, HttpServletResponse resp) {
-		// 데이터수집 -> 처리 -> 결과전송
+	public ActionTo execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+		//데이터수집 -> 처리 -> 결과전송
 		UserDAO udao = new UserDAO();
 		UserDTO user = new UserDTO();
 		String userid = req.getParameter("userid");
@@ -25,10 +24,10 @@ public class UserJoinOkAction implements Action {
 		user.setZipcode(req.getParameter("zipcode"));
 		user.setAddr(req.getParameter("addr"));
 		user.setAddrdetail(req.getParameter("addrdetail"));
-		user.setAddr(req.getParameter("addretc"));
+		user.setAddretc(req.getParameter("addretc"));
 		user.setUserhobby(String.join(",", req.getParameterValues("userhobby")));
 		
-		System.out.println("INFO : user 객체 - "+user);
+		System.out.println("INFO:user객체 - "+user);
 		
 		ActionTo transfer = new ActionTo();
 		transfer.setRedirect(true);
@@ -36,10 +35,21 @@ public class UserJoinOkAction implements Action {
 			Cookie cookie = new Cookie("joinid", userid);
 			resp.addCookie(cookie);
 			transfer.setPath(req.getContextPath()+"/user/userlogin.us");
-		}else {
-			// localhost:9090/??? < 자동으로 index.jsp로 감
+		}
+		else {
+			//localhost:9090/????
 			transfer.setPath(req.getContextPath());
 		}
 		return transfer;
 	}
 }
+
+
+
+
+
+
+
+
+
+

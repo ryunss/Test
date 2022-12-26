@@ -10,22 +10,17 @@ import com.koreait.mybatis.SqlMapConfig;
 
 public class BoardDAO {
 	SqlSession sqlsession;
-	
 	public BoardDAO() {
 		sqlsession = SqlMapConfig.getFactory().openSession(true);
 	}
-
 	public int getBoardCnt(String keyword) {
 		if(keyword == null) {
 			return sqlsession.selectOne("Board.getBoardCnt");
-		}else {
-			return sqlsession.selectOne("Board.getBoardCntWithKey", keyword);
 		}
-		
-//		return keyword == null ? sqlsession.selectOne("Board.getBoardCnt") : 
-//			sqlsession.selectOne("Board.getBoardCntWithKey");
+		else {
+			return sqlsession.selectOne("Board.getBoardCntWithKey",keyword);
+		}
 	}
-
 	public List<BoardDTO> getBoardList(int startRow, int pageSize, String keyword) {
 		HashMap<String, Object> datas = new HashMap<String, Object>();
 		List<BoardDTO> result = null;
@@ -34,18 +29,33 @@ public class BoardDAO {
 		datas.put("pageSize", pageSize);
 		
 		if(keyword == null) {
-			result = sqlsession.selectList("Board.getBoardList", datas);
-		}else {
+			result = sqlsession.selectList("Board.getBoardList",datas);
+		}
+		else {
 			datas.put("keyword", keyword);
 			result = sqlsession.selectList("Board.getBoardListWithKey",datas);
 		}
 		
 		return result;
 	}
-
-	public BoardDTO getBoardDetail(String boardnum) {
-		return sqlsession.selectOne("Board.getBoardDetail", boardnum);
+	public BoardDTO getDetail(int boardnum) {
+		return sqlsession.selectOne("Board.getDetail",boardnum);
 	}
-
+	public boolean insertBoard(BoardDTO board) {
+		return sqlsession.insert("Board.insertBoard",board) == 1;
+	}
+	public int getLastNum(String userid) {
+		return sqlsession.selectOne("Board.getLastNum",userid);
+	}
+	public void updateReadcount(int boardnum) {
+		sqlsession.update("Board.updateReadcount",boardnum);
+	}
 	
 }
+
+
+
+
+
+
+

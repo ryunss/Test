@@ -2,15 +2,15 @@ package com.koreait.dto;
 
 public class UserDTO {
 	private String userid;
-	private String userpw;
-	private String username;
-	private String usergender;
+    private String userpw;
+    private String username;
+    private String usergender;
 	private String zipcode;
-	private String addr;
-	private String addrdetail;
-	private String addretc;
-	private String userhobby;
-	
+    private String addr;
+    private String addrdetail;
+    private String addretc;
+    private String userhobby;
+    
 	public String getUserid() {
 		return userid;
 	}
@@ -66,11 +66,11 @@ public class UserDTO {
 		this.userhobby = userhobby;
 	}
 	
-	// alt shift s -> s : toString 재정의
 	@Override
 	public String toString() {
 		return "UserDTO [userid=" + userid + ", userpw=" + userpw + ", username=" + username + ", usergender="
 				+ usergender + ", zipcode=" + zipcode + ", addr=" + addr + ", addrdetail=" + addrdetail + ", addretc="
 				+ addretc + ", userhobby=" + userhobby + "]";
 	}
+	
 }

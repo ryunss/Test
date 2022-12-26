@@ -2,13 +2,13 @@ package com.koreait.dto;
 
 public class BoardDTO {
 	private int boardnum;
-	private String boardtitle;
-	private String boardcontents;
-	private String regdate;
-	private String updatedate;
-	private int readcount;
-	private String userid;
-	
+    private String boardtitle;
+    private String boardcontents;
+    private String regdate;
+    private String updatedate;
+    private int readcount;
+    private String userid;
+    
 	public int getBoardnum() {
 		return boardnum;
 	}
@@ -51,6 +51,4 @@ public class BoardDTO {
 	public void setUserid(String userid) {
 		this.userid = userid;
 	}
-	
-	
 }
