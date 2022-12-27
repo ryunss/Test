@@ -36,6 +36,7 @@ create table t_file(
     boardnum int
 );
 
+select * from t_file;
 
 
 

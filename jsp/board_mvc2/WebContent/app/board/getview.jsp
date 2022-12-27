@@ -220,8 +220,8 @@
 				<tr align="right" valign="middle">
 					<td>
 						<c:if test="${board.userid == loginUser }">
-							<a href="">수정</a>&nbsp;&nbsp;
-							<a href="">삭제</a>&nbsp;&nbsp;
+							<a href="${cp}/board/boardmodify.bo?boardnum=${board.boardnum}&page=${param.page}&q=${param.q}">수정</a>&nbsp;&nbsp;
+							<a href="${cp }/board/boardremove.bo?boardnum=${board.boardnum}">삭제</a>&nbsp;&nbsp;
 						</c:if>
 						<a href="${cp }/board/boardlist.bo?page=${param.page}&q=${param.q}">목록</a>
 					</td>

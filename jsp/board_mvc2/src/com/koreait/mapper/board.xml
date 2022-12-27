@@ -36,6 +36,15 @@
 	<update id="updateReadcount" parameterType="_int">
 		update t_board set readcount = readcount+1 where boardnum=#{boardnum}
 	</update>
+	
+	<update id="updateBoard" parameterType="boarddto">
+		update t_board set boardtitle=#{boardtitle}, boardcontents=#{boardcontents}
+		where boardnum=#{boardnum}
+	</update>
+	
+	<delete id="removeBoard" parameterType="_int">
+		delete from t_board where boardnum = #{boardnum}
+	</delete>
 </mapper>
 
 

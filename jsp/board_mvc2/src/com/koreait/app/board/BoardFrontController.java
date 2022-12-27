@@ -58,6 +58,28 @@ public class BoardFrontController extends HttpServlet{
 			} catch (Exception e) {
 				System.out.println("WARN:FileDownload : "+e);
 			}
+			break;
+		case "/board/boardmodify.bo":
+			try {
+				transfer = new BoardModifyAction().execute(req,resp);
+			} catch (Exception e) {
+				System.out.println("WARN:BoardModify : "+e);
+			}
+			break;
+		case "/board/boardmodifyok.bo":
+			try {
+				transfer = new BoardModifyOkAction().execute(req,resp);
+			} catch (Exception e) {
+				System.out.println("WARN:BoardModifyOk : "+e);
+			}
+			break;
+		case "/board/boardremove.bo":
+			try {
+				transfer = new BoardRemoveAction().execute(req,resp);
+			} catch (Exception e) {
+				System.out.println("WARN:BoardRemove : "+e);
+			}
+			break;
 		}
 		
 		//전송 일괄처리(어디인지, 어떤 방식인지는 몰라도 그냥 transfer라는 객체에 담겨있는 정보를 해석해서 그대로 페이지를 이동)

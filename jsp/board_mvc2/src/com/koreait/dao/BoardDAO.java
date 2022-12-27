@@ -50,6 +50,12 @@ public class BoardDAO {
 	public void updateReadcount(int boardnum) {
 		sqlsession.update("Board.updateReadcount",boardnum);
 	}
+	public boolean updateBoard(BoardDTO board) {
+		return sqlsession.update("Board.updateBoard",board) == 1;
+	}
+	public boolean removeBoard(int boardnum) {
+		return sqlsession.delete("Board.removeBoard",boardnum) == 1;
+	}
 	
 }
 

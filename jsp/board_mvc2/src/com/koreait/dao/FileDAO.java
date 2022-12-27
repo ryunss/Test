@@ -21,6 +21,10 @@ public class FileDAO {
 	public List<FileDTO> getFiles(int boardnum) {
 		return sqlsession.selectList("File.getFiles",boardnum);
 	}
+
+	public void deleteByName(String systemname) {
+		sqlsession.delete("File.deleteByName",systemname);
+	}
 }
 
 
