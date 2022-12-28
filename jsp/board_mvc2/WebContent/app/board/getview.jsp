@@ -221,7 +221,7 @@
 					<td>
 						<c:if test="${board.userid == loginUser }">
 							<a href="${cp}/board/boardmodify.bo?boardnum=${board.boardnum}&page=${param.page}&q=${param.q}">수정</a>&nbsp;&nbsp;
-							<a href="${cp }/board/boardremove.bo?boardnum=${board.boardnum}">삭제</a>&nbsp;&nbsp;
+							<a href="${cp}/board/boardremove.bo?boardnum=${board.boardnum}">삭제</a>&nbsp;&nbsp;
 						</c:if>
 						<a href="${cp }/board/boardlist.bo?page=${param.page}&q=${param.q}">목록</a>
 					</td>
@@ -230,15 +230,16 @@
 		</form>
 		
 		<div class="reply_line">
-			<form name="replyForm" method="post" action="">
-				<input type="hidden" name="boardnum" value="">
-				<input type="hidden" name="page" value="">
+			<form name="replyForm" method="post" action="${cp}/board/replywrite.bo">
+				<input type="hidden" name="boardnum" value="${board.boardnum}">
+				<input type="hidden" name="page" value="${param.page}">
+				<input type="hidden" name="q" value="${param.q}">
 				<table class="write_box">
 					<tr>
 						<td>댓글</td>
 						<td>
 							<textarea name="replycontents"></textarea>
-							<a href="">등록</a>
+							<a href="javascript:document.replyForm.submit()">등록</a>
 						</td>
 					</tr>
 				</table>

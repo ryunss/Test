@@ -7,6 +7,10 @@
 		insert into t_board (boardtitle,boardcontents,userid) 
 		values(#{boardtitle},#{boardcontents},#{userid}) 
 	</insert>
+	<insert id="insertReply" parameterType="replydto">
+		insert into t_reply (replycontents,userid,boardnum)
+		values(#{replycontents},#{userid},#{boardnum})
+	</insert>
 
 	<select id="getBoardCnt" resultType="_int">
 		select count(*) from t_board
@@ -43,7 +47,7 @@
 	</update>
 	
 	<delete id="removeBoard" parameterType="_int">
-		delete from t_board where boardnum = #{boardnum}
+		delete from t_board where boardnum=#{boardnum}
 	</delete>
 </mapper>
 

@@ -25,19 +25,29 @@ public class BoardRemoveAction implements Action{
 		
 		ActionTo transfer = new ActionTo();
 		transfer.setRedirect(true);
-		
 		if(bdao.removeBoard(boardnum)) {
 			for (int i = 0; i < files.size(); i++) {
-				File file = new File(saveFolder, files.get(i).getSystemname());
+				File file = new File(saveFolder,files.get(i).getSystemname());
 				if(file.exists()) {
 					file.delete();
 					fdao.deleteByName(files.get(i).getSystemname());
 				}
 			}
 			transfer.setPath(req.getContextPath()+"/board/boardlist.bo");
-		}else {
+		}
+		else {
 			transfer.setPath(req.getContextPath()+"/board/boardview.bo?boardnum="+boardnum);
 		}
 		return transfer;
 	}
 }
+
+
+
+
+
+
+
+
+
+

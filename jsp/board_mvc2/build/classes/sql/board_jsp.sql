@@ -38,6 +38,15 @@ create table t_file(
 
 select * from t_file;
 
+create table t_reply(
+	replynum int primary key auto_increment,
+	replycontents varchar(1000) not null,
+    regdate datetime default now(),
+    updatechk enum('o','x') default 'x',
+	userid varchar(300),
+    boardnum bigint
+);
+
 
 
 
