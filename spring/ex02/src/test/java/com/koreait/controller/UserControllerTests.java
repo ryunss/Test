@@ -27,52 +27,62 @@ public class UserControllerTests {
 	@Setter(onMethod_ = @Autowired)
 	private WebApplicationContext wac;
 	
-	// 가짜 MVC
-	// 마치 브라우저에서 사용하는 것처럼 만들어서 Controller를 실행해 볼 수 있다.
+	//가짜 MVC
+	//마치 브라우저에서 사용하는 것처럼 만들어서 Controller를 실행해 볼 수 있다.
 	private MockMvc mvc;
 	
 	@Before
 	public void setup() {
 		mvc = MockMvcBuilders.webAppContextSetup(wac).build();
 	}
-	
 //	@Test
-//	public void replaceTest() throws Exception {
-//						// 가짜 Mvc에 요청을 만든다.	get방식으로 user/join으로 보낸다.
-//		//ModelAndView mav = mvc.perform(MockMvcRequestBuilders.get("/user/join"))
+//	public void replaceTest() throws Exception{
+////		ModelAndView mav = mvc.perform(MockMvcRequestBuilders.get("/user/join"))
 //		ModelAndView mav = mvc.perform(MockMvcRequestBuilders.get("/user/login"))
-//			.andReturn()
-//			.getModelAndView();
+//		.andReturn()
+//		.getModelAndView();
 //		
 //		log.info(mav.getViewName());
 //		log.info(mav.getModelMap());
 //	}
-	
 //	@Test
 //	public void joinTest() throws Exception{
-//		// 								요청제작자				post 방식으로 /user/join 으로 보낸다
-//		ModelAndView mav = mvc.perform(MockMvcRequestBuilders.post("/user/join")
-//				.param("userid", "testid3") // 요청을 보낼 때 파라미터를 추가해서 요청 보내기
-//				.param("userpw", "testpw3")
-//				.param("username", "testname3")				
-//				)
-//			.andReturn() // 반환된 결과 : 응답(뷰, 모델 등을 포함)
-//			.getModelAndView(); // 응답에서 모델과 뷰를 포함하고 있는 타입의 객체 받기
+//		ModelAndView mav = mvc.perform(
+////						요청제작자		post방식으로	/user/join로 요청
+//				MockMvcRequestBuilders.post("/user/join")
+//				.param("userid", "testid3")	//요청을 보낼 때 파라미터를 추가해서 요청 보내기
+//				.param("userpw","testpw3")
+//				.param("username", "testname3")
+//		)
+//		.andReturn()	//반환된 결과 : 응답(뷰, 모델 등을 포함)
+//		.getModelAndView();	//응답에서 모델과 뷰를 포함하고 있는 타입의 객체 받기
 //		
 //		log.info(mav.getViewName());
 //		log.info(mav.getModelMap());
 //	}
-	
 	@Test
 	public void loginTest() throws Exception{
-		ModelAndView mav = mvc.perform(MockMvcRequestBuilders.post("/user/login")
-				.param("userid", "testid3")
-				.param("userpw", "testpw3")				
-				)
-			.andReturn()
-			.getModelAndView();
+		ModelAndView mav = mvc.perform(
+//				요청제작자		post방식으로	/user/join로 요청
+				MockMvcRequestBuilders.post("/user/login")
+				.param("userid", "testid3")	//요청을 보낼 때 파라미터를 추가해서 요청 보내기
+				.param("userpw","testpw3")
+		)
+		.andReturn()	//반환된 결과 : 응답(뷰, 모델 등을 포함)
+		.getModelAndView();	//응답에서 모델과 뷰를 포함하고 있는 타입의 객체 받기
 		
 		log.info(mav.getViewName());
 		log.info(mav.getModelMap());
 	}
 }
+
+
+
+
+
+
+
+
+
+
+

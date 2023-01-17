@@ -6,9 +6,9 @@
 	<!-- md5('문자열') : 단방향 암호화 함수 -->
 	<!-- binary('문자열') : 대소문자까지 비교 -->
 	<insert id="join">
-		insert into spring_user values(#{userid}, md5(#{userpw}), #{username})
+		insert into spring_user values(#{userid},md5(#{userpw}),#{username})
 	</insert>
 	<select id="login" resultType="com.koreait.domain.UserDTO">
-		select * from spring_user where userid = #{userid} and binary(userpw) = md5(#{userpw})
+		select * from spring_user where userid=#{userid} and binary(userpw)=md5(#{userpw})
 	</select>
 </mapper>

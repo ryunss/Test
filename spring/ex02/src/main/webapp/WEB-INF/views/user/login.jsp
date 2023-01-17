@@ -58,7 +58,7 @@
 						<form class="loginForm" name="loginForm" id="loginForm" action="${cp}/user/login" method="post">
 							<div class="col-12">
 								<h3>아이디</h3>
-								<input type="text" name="userid">
+								<input type="text" name="userid" value="${cookie.joinid.value}">
 							</div>
 							<div class="col-12">
 								<h3>비밀번호</h3>

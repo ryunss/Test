@@ -27,7 +27,6 @@ public class UserController {
 //	public void join() {
 //		
 //	}
-//	
 //	@GetMapping("/login")
 //	public void login() {
 //		
@@ -41,19 +40,18 @@ public class UserController {
 		if(service.join(user)) {
 			Cookie cookie = new Cookie("joinid", user.getUserid());
 			cookie.setMaxAge(300);
-			resp.addCookie(cookie); // 이걸(쿠키) 사용하기 위해서 HttpServletResponse 를 매개변수로. 
+			resp.addCookie(cookie);
 		}
-		return "redirect:/"; // home.jsp 이동.
+		return "redirect:/";
 	}
 	
 	@PostMapping("/login")
 	public String login(String userid, String userpw, HttpServletRequest req) {
 		if(service.login(userid, userpw, req)) {
-			// 성공
-		}else {
-			// 실패
 		}
-		return "home"; // forward 로 home.jsp 이동.
+		else {
+		}
+		return "home";
 	}
 	
 	@GetMapping("/logout")
@@ -62,3 +60,12 @@ public class UserController {
 		return "home";
 	}
 }
+
+
+
+
+
+
+
+
+

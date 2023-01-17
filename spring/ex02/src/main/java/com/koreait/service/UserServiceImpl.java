@@ -20,15 +20,18 @@ public class UserServiceImpl implements UserService{
 	public boolean join(UserDTO user) {
 		return mapper.join(user) == 1;
 	}
-	
 	@Override
 	public boolean login(String userid, String userpw, HttpServletRequest req) {
 		UserDTO loginUser = mapper.login(userid, userpw);
 		if(loginUser == null) {
 			return false;
-		}else {
-			if(req == null) {}
-			else { req.getSession().setAttribute("loginUser", loginUser);}
+		}
+		else {
+			if(req == null) {
+				
+			}else {
+				req.getSession().setAttribute("loginUser", loginUser);
+			}
 			return true;
 		}
 	}
@@ -36,7 +39,13 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public void logout(HttpServletRequest req) {
 		if(req != null) {
-			req.getSession().removeAttribute("loginUser");			
+			req.getSession().removeAttribute("loginUser");
 		}
 	}
 }
+
+
+
+
+
+

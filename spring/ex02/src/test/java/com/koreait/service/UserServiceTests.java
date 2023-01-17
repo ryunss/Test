@@ -25,11 +25,25 @@ public class UserServiceTests {
 //		user.setUserpw("testpw2");
 //		user.setUsername("testname2");
 //		
-//		log.info("result : "+service.join(user)); // true
+//		log.info("result : "+service.join(user));
 //	}
 	
 	@Test
 	public void loginTest() {
-		log.info("result : "+service.login("testid2", "testpw2", null)); // true
+		log.info("result : "+service.login("testid2", "testpw2", null));
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

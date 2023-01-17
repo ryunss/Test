@@ -18,7 +18,7 @@ public class BoardMapperTests {
 	private BoardMapper mapper;
 	
 	@Test
-	public void mapperTest() {
+	public void loginTest() {
 		Criteria cri = new Criteria(4,10);
 		cri.setType("TCW");
 		cri.setKeyword("apple");
