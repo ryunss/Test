@@ -57,16 +57,19 @@
 		height:75px; width:100%; resize:none;
 	}
 </style>
+<script>
+	const cp = "${cp}";
+</script>
 </head>
 <body class="is-preload">
-	<c:if test="${not empty s }">
+	<c:if test="${not empty s}">
 		<script>
-			alert("${s}번 게시글 수정 완료!");
+			alert("${s}번 게시글 수정 완료!")
 		</script>
 	</c:if>
-	<c:if test="${not empty f }">
+	<c:if test="${not empty f}">
 		<script>
-			alert("게시글 수정 실패!");
+			alert("게시글 수정 실패!")
 		</script>
 	</c:if>
 	<!-- Header -->
@@ -106,12 +109,12 @@
 				<br>
 				<br>
 				<div class="write_area" style="clear:both;">
-					<form name="boardForm" method="post" action="${cp }/board/remove">
-						<input name="boardnum" type="hidden" value="${board.boardnum }">
-						<input name="pagenum" type="hidden" value="${cri.pagenum }">
-						<input name="amount" type="hidden" value="${cri.amount }">
-						<input name="type" type="hidden" value="${cri.type }">
-						<input name="keyword" type="hidden" value="${cri.keyword }">
+					<form name="boardForm" method="post" action="${cp}/board/remove">
+						<input name="boardnum" value="${board.boardnum}" type="hidden">
+						<input name="pagenum" value="${cri.pagenum}" type="hidden">
+						<input name="amount" value="${cri.amount}" type="hidden">
+						<input name="type" value="${cri.type}" type="hidden">
+						<input name="keyword" value="${cri.keyword}" type="hidden">
 						<div class="col-12">
 							<h4>제목</h4>
 							<input name="boardtitle" type="text" value="${board.boardtitle}" readonly>
@@ -174,70 +177,214 @@
 	<script src="${cp}/resources/assets/js/util.js"></script>
 	<script src="${cp}/resources/assets/js/main.js"></script>
 	<script src="${cp}/resources/assets/js/reply.js"></script>
+	
 
 </body>
 <script>
-	function modify(){
-		const boardForm = document.boardForm;
-		// location.href = "${cp}/board/modify${cri.listLink}&boardnum=${board.boardnum}";
-		boardForm.setAttribute("action", "${cp}/board/modify");
-		boardForm.setAttribute("method", "get");
-		boardForm.submit();
-	}
+	const replies = $(".replies")
+	const page = $(".page");
+	const loginUser = "${loginUser.userid}"
+	let maxCnt = 0;
+	//내가 보고 있는 댓글의 페이지 번호
+	let pagenum = 0;
+	let boardnum = "${board.boardnum}"
+	//현재 보고 있는 게시글의 댓글이 있는지 없는지를 표기하는 flag
+	let flag = true;
 	
-	$(".regist").on("click",function(e){ // 댓글 등록 눌렀을 때
-		e.preventDefault(); // a 태그 동작 막고
-		$(".replyForm").show(); // display none 을 보여주는 키워드.
-		$(this).hide(); // 작성칸이 보여졌기 때문에 등록버튼은 다시 감춰야대는데 다시 감춰줄때는 hide
-	})
-	$(".cancel").on("click", function(e){ // 댓글 등록 취소를 눌렀을 때
-		e.preventDefault(); // a 태그 동작 막고
-		$(".replyForm").hide(); // display 를 다시 숨긴다.
-		$(".regist").show(); // 댓글 등록 버튼을 다시 보여준다.
-		$("[name='replaycontents']").val(""); // 댓글 쓰다가 지웠을 때는 값이 남아있을 수 있기 때문에
-											// 댓글 내용은 비워준다.
+	
+	$(document).ready(function(){
+		pagenum = 1;
+		showList(1);
 	})
 	
-	const replies = $(".replies");
-	const loginUser = "${loginUser.userid}";
-	let maxCnt = 0; // 댓글 개수
-	let pagenum = 0; // 내가 보고 있는 댓글의  페이지 번호
-	let boardnum = "${board.boardnum}";
-	
-	$(".finish").on("click",function(e){ // 댓글 작성 완료버튼 누르면
-		e.preventDefault(); // a 태그 동작 막고
-		let replycontents = $("[name='replycontents']").val(); // 등록하기 위해 작성한 내용
-		
+	$(".finish").on("click",function(e){
+		e.preventDefault();
+		let replycontents = $("[name='replycontents']").val();
 		replyService.add(
 			{"boardnum":boardnum, "userid":loginUser, "replycontents":replycontents},
 			function(result){
-				// alert("");
-				// 이 조건은 내가 지금 보고 있는 페이지가 마지막 페이지면서 댓글이 5개가 꽉 안찻다면
-				if(maxCnt<5 || Math.ceil(maxCnt/5) == pagenum && maxCnt%5 != 0){ // 댓글도 5개씩 페이징하기 위함.
+				//alert("");
+				if(maxCnt<5 || Math.ceil(maxCnt/5) == pagenum && maxCnt%5 != 0){
 					let str = "";
-				
-					str += '<li style="clear:both;" class="li">';
-					str += '<div style="display:inline; float:left; width:80%">';
-					str += '<strong class="userid">'+loginUser+'</strong>';
-					str += '<p class="reply">'+replycontents+'</p>';
-					str += '</div><div style="text-align:right;">';
-					str += '<strong>방금 전</strong><br>';
-					str += '<a href="" class="modify">수정</a> &nbsp;'
-					str += '<a href="" class="mfinish" style="display:none;">수정완료</a>'
-					str += '<a href="" class="remove">삭제</a>'
-					str += '</div></li>';
 					
-					replies.append(str);
+					str += '<li style="clear:both;" class="li'+result+'">'
+					str += '<div style="display:inline; float:left; width:80%;">';
+					//<strong class="userid123">apple</strong>
+					str += '<strong class="userid'+result+'">'+loginUser+'</strong>'
+					str += '<p class="reply'+result+'">'+replycontents+'</p>'
+					str += '</div><div style="text-align:right;">'
+					str += '<strong>방금 전</strong><br>'
+					str += '<a href="'+result+'" class="modify">수정</a>';
+					str += '<a href="'+result+'" class="mfinish" style="display:none;">수정 완료</a>';
+					str += '<a href="'+result+'" class="remove">&nbsp;&nbsp;삭제</a>';
+					str += '</div></li>'
+					
+					if(flag){
+						replies.append(str);
+					}
+					else{
+						replies.html(str);
+						flag = true;
+					}
+					
+					$(".remove").on("click",deleteReply);
+					$(".modify").on("click",modifyReply);
+					$(".mfinish").on("click",modifyReplyOk);
+					
 					maxCnt++;
 				}
+				else{
+					showList(pagenum);
+				}
 			}
-		);
+		)
+	
 		
-		$("[name='replycontents']").val(""); // 등록했으니 글 비워주고, 폼은 숨겨주고, 등록은 보여주고 
+		$("[name='replycontents']").val("");
 		$(".replyForm").hide();
 		$(".regist").show();
+	})
+	function showList(pagenum){
+		//ajax
+		replyService.getList(
+			{boardnum:boardnum,pagenum:pagenum||1},
+			function(replyCnt, list){
+				let str = "";
+				if(list == null || list.length == 0){
+					flag = false;
+					str += '<li style="clear:both;">등록된 댓글이 없습니다</li>'
+					replies.html(str);
+					return;
+				}
+				
+				maxCnt = replyCnt;
+				for(let i=0;i<list.length;i++){
+					str += '<li style="clear:both;" class="li'+list[i].replynum+'">'
+					str += '<div style="display:inline; float:left; width:80%;">';
+					//<strong class="userid123">apple</strong>
+					str += '<strong class="userid'+list[i].replynum+'">'+list[i].userid+'</strong>'
+					str += '<p class="reply'+list[i].replynum+'">'+list[i].replycontents+'</p>'
+					str += '</div><div style="text-align:right;">'
+					str += '<strong>'+replyService.displayTime(list[i])+'</strong><br>'
+					if(list[i].userid == loginUser){
+						str += '<a href="'+list[i].replynum+'" class="modify">수정</a>';
+						str += '<a href="'+list[i].replynum+'" class="mfinish" style="display:none;">수정 완료</a>';
+						str += '<a href="'+list[i].replynum+'" class="remove">&nbsp;&nbsp;삭제</a>';
+					}
+					str += '</div></li>'
+				}
+				replies.html(str);
+				
+				$(".remove").on("click",deleteReply);
+				$(".modify").on("click",modifyReply);
+				$(".mfinish").on("click",modifyReplyOk);
+				
+				showReplyPage(replyCnt);
+			}
+		)
+	}
+	function showReplyPage(replyCnt){
+		let endPage = Math.ceil(pagenum/5)*5;
+		let startPage = endPage - 4;
 		
-	});
+		let prev = startPage!=1;
+		endPage = (endPage-1)*5 >= replyCnt ? Math.ceil(replyCnt/5) : endPage
+		let next = endPage*5 < replyCnt ? true : false ;
+		
+		let str = "";
+		if(prev){
+			str += '<a class="changePage" href="'+(startPage-1)+'"><code>&lt;</code></a>'
+		}
+		for(let i=startPage;i<=endPage;i++){
+			str+='<a class="changePage" href="'+i+'"><code>'+i+'</code></a>'
+		}
+		if(next){
+			str+= '<a class="changePage" href="'+(endPage+1)+'"><code>&gt;</code></a>'
+		}
+		page.html(str);
+		
+		$(".changePage").on("click",function(e){
+			e.preventDefault();
+			let target = $(this).attr("href");
+			pagenum = parseInt(target);
+			showList(pagenum)
+		})
+	}
+	
+	function deleteReply(e){
+		e.preventDefault();
+		let replynum = $(this).attr("href");
+		replyService.remove(
+			replynum,
+			function(result){
+				if(result == "success"){
+					alert(replynum+"번 댓글 삭제 완료!");
+					showList(pagenum)
+				}
+			},
+			function(err){
+				alert("에러발생");
+			}
+		);
+	}
+	let replyFlag = false;
+	function modifyReply(e){
+		e.preventDefault();
+		if(!replyFlag){
+			replyFlag = true;
+			let replynum = $(this).attr("href");
+			const replyTag = $(".reply"+replynum);
+			replyTag.html('<textarea class="'+replynum+' mdf">'+replyTag.text()+'</textarea>')
+			$(this).hide();
+			$(this).next().show();
+		}
+		else{
+			alert("수정중인 댓글이 있습니다!");
+		}
+	}
+	function modifyReplyOk(e){
+		e.preventDefault();
+		replyFlag = false;
+		
+		let replynum = $(this).attr("href");
+		let replycontents = $("."+replynum).val();
+		
+		if(replycontents == ""){
+			alert("수정할 댓글 내용을 입력하세요!");
+			return;
+		}
+		
+		replyService.modify(
+			{replynum:replynum, replycontents:replycontents, boardnum:boardnum, userid:loginUser},
+			function(result){
+				if(result == "success"){
+					alert(replynum+"번 댓글 수정 완료!");
+					showList(pagenum);
+				}
+			}
+		)
+	}
+
+	function modify(){
+		const boardForm = document.boardForm;
+		//location.href = "${cp}/board/modify${cri.listLink}&boardnum=${board.boardnum}"
+		boardForm.setAttribute("action","${cp}/board/modify")
+		boardForm.setAttribute("method","get");
+		boardForm.submit()
+	}
+	$(".regist").on("click",function(e){
+		e.preventDefault();
+		$(".replyForm").show();
+		$(this).hide();
+	})
+	$(".cancel").on("click",function(e){
+		e.preventDefault();
+		$(".replyForm").hide();
+		$(".regist").show();
+		$("[name='replycontents']").val("")
+	})
+	
+	
 </script>
 </html>
 
